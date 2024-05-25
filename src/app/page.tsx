@@ -7,7 +7,6 @@ import { useMediaQuery } from "react-responsive";
 
 const Home = () => {
   const isSmallScreen = useMediaQuery({ query: "(max-width: 768px)" });
-  console.log(isSmallScreen, "check");
   return (
     <Row>
       <Col span={4}>
