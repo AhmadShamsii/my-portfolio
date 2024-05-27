@@ -1,14 +1,12 @@
-"use client";
-import Image from "next/image";
-import styles from "./page.module.css";
-import "./global.css";
-import { Anchor, Col, Row } from "antd";
-import { useMediaQuery } from "react-responsive";
-import MobileLayout from "./components/MobileLayout";
-import DesktopLayout from "./components/DesktopLayout";
-
+import Layout from "@/components/Layout";
 const Home = () => {
-  const isSmallScreen = useMediaQuery({ query: "(max-width: 768px)" });
-  return <div>{isSmallScreen ? <MobileLayout /> : <DesktopLayout />}</div>;
+  return (
+    <Layout>
+      <div style={{ height: "100vh", background: "red" }}>
+        This is the Home page content.
+      </div>
+    </Layout>
+  );
 };
+
 export default Home;
