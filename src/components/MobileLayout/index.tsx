@@ -8,14 +8,16 @@ interface MobileLayoutProps {
 }
 
 const MobileLayout: React.FC<MobileLayoutProps> = ({ children }) => {
+  console.log('check')
   return (
     <>
       <div style={{ padding: "20px" }}>
-      <Anchor direction="horizontal">
-    {items.map(item => (
-      <Anchor.Link key={item.href} href={item.href} title={item.title} />
-    ))}
-  </Anchor>      </div>
+        <Anchor direction="horizontal">
+          {items.map((item) => (
+            <Anchor.Link key={item.href} href={item.href} title={item.title} />
+          ))}
+        </Anchor>{" "}
+      </div>
       <div>{children}</div>
     </>
   );
