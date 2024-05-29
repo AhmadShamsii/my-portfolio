@@ -8,7 +8,6 @@ interface MobileLayoutProps {
 }
 
 const MobileLayout: React.FC<MobileLayoutProps> = ({ children }) => {
-  console.log('check')
   return (
     <>
       <div style={{ padding: "20px" }}>
