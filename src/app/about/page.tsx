@@ -1,12 +1,9 @@
 // pages/about.tsx
-import Layout from "@/components/Layout";
 const About = () => {
   return (
-    <Layout>
-      <div  style={{ height: "100vh", background: "blue" }}>
+      <div  style={{ height: "100vh", background: "green" }}>
         This is the About page content.
       </div>
-    </Layout>
   );
 };
 

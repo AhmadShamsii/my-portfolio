@@ -1,13 +1,5 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.ant-anchor-link-title {
-    color: inherit; /* Inherit the color from the parent element */
-    text-decoration: none; /* Remove underline if present */
-  }
-  
-  .ant-anchor-link-title:hover {
-    color: #1890ff; /* Same color as Ant Design's hover state for anchor links */
-  }
