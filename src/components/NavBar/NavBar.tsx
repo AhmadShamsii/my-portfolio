@@ -33,7 +33,7 @@ const ListItem = styled.li<{ selected: boolean; isLogo: boolean }>`
   padding-top: 10px;
   font-size: 18px;
   color: ${({ selected }) => (selected ? colors.black : colors.lightgray)};
-  font-weight: ${({ selected }) => (selected ? "bold" : "normal")};
+  font-weight: ${({ selected }) => (selected ? "500" : "normal")};
   cursor: ${({ isLogo }) => (isLogo ? "default" : "pointer")};
   transition: background-color 0.3s ease;
   &:hover {
