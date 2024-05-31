@@ -1,29 +1,43 @@
 import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { useRouter } from "next/navigation";
-import { Col } from "antd";
+import { Col, Divider } from "antd";
 import styled from "styled-components";
 import "./../../app/global.css";
 import { colors } from "@/utils/colors";
+import Image from "next/image";
+import logo from "./../../../public/Untitled.svg";
+
+const StyledContainer = styled(Col)<{ isDesktop: boolean }>`
+padding-top: 0px;
+  border-right: ${({ isDesktop }) =>
+    isDesktop ? "1px solid lightgray" : "none"};
+  border-bottom: ${({ isDesktop }) =>
+    isDesktop ? "none" : "1px solid lightgray"};
+  height: ${({ isDesktop }) => (isDesktop ? "100vh" : "auto")};
+`;
 const List = styled.ul<{ isDesktop: boolean }>`
   list-style-type: none;
   padding: 0;
   display: flex;
   align-items: center;
   text-align: start;
-  padding-top: 25%;
+  padding-top: ${({ isDesktop }) => (isDesktop ? "25%" : "0%")};
   flex-direction: ${({ isDesktop }) => (isDesktop ? "column" : "row")};
 `;
 
-const ListItem = styled.li<{ selected: boolean }>`
-  padding: 10px 15px;
-  margin: 5px 0;
-  color: ${({ selected }) => (selected ? colors.black :colors.lightgray)};
+const ListItem = styled.li<{ selected: boolean; isLogo: boolean }>`
+  padding: ${({ isLogo }) => (isLogo ? "0" : "10px 15px")};
+  margin: ${({ isLogo }) => (isLogo ? "0" : "5px 0")};
+  margin-top: 5px;
+  padding-top: 10px;
+  font-size: 18px;
+  color: ${({ selected }) => (selected ? colors.black : colors.lightgray)};
   font-weight: ${({ selected }) => (selected ? "bold" : "normal")};
-  cursor: pointer;
+  cursor: ${({ isLogo }) => (isLogo ? "default" : "pointer")};
   transition: background-color 0.3s ease;
   &:hover {
-    color: ${colors.darkgray};
+    color: ${({ isLogo }) => (isLogo ? "inherit" : colors.darkgray)};
   }
 `;
 
@@ -35,18 +49,23 @@ const NavBar = () => {
   const items = [
     {
       key: "/",
-      label: "Logo",
+      label: (
+        <Image
+          style={{ margin: "0", padding: "0" }}
+          priority
+          alt="Ahmad Shamsi"
+          src={logo}
+        />
+      ),
     },
-    {
-      type: "divider",
-    },
-    {
-      key: "/",
-      label: "Home",
-    },
+
     {
       key: "about",
       label: "About",
+    },
+    {
+      key: "projects",
+      label: "Projects",
     },
     {
       type: "divider",
@@ -63,19 +82,20 @@ const NavBar = () => {
   };
 
   return (
-    <Col span={4}>
+    <StyledContainer isDesktop={isDesktop} span={ isDesktop ?  4 : 24}>
       <List isDesktop={isDesktop}>
         {items?.map((item, index) => (
           <ListItem
             key={index}
             selected={index === selectedIndex}
+            isLogo={item.key === "/"}
             onClick={() => handleClick(index, item)}
           >
             {item?.label}
           </ListItem>
         ))}
       </List>
-    </Col>
+    </StyledContainer>
   );
 };
 export default NavBar;
