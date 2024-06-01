@@ -5,6 +5,9 @@ import Typography from "antd/es/typography/Typography";
 import Image from "next/image";
 import styled from "styled-components";
 import monstarz from "./../../public/monstarz.png";
+import wordplay from "./../../public/wordplay.png";
+import nexters from "./../../public/nexters.png";
+import travelo from "./../../public/travelo.png";
 
 const Text = Typography;
 
@@ -43,7 +46,7 @@ const Home = () => {
       </StyledDesc>
       <Divider />
       <StyledText style={{ marginBottom: "30px" }}>Projects</StyledText>
-      <Row gutter={16}>
+      <Row gutter={[24, 24]}>
         <Col span={16}>
           <Card hoverable>
             <Image
@@ -52,14 +55,20 @@ const Home = () => {
               alt="project 1 | Monstarz"
             />
           </Card>
-          <Flex style={{ margin: " 2% 3.5% 1%  3.5%", color: colors.black }} justify="space-between">
-          <StyledText >
-          <span style={{fontWeight: "300"}} >  Monstarz</span> - An e-commerce store along with admin
-            dashboard
-          </StyledText>
-          <StyledText>2023</StyledText>
+          <Flex
+            gap={20}
+            style={{ margin: " 2% 3.5% 1%  3.5%", color: colors.black }}
+            justify="space-between"
+          >
+            <StyledText style={{ fontSize: "16px" }}>
+              <span style={{ fontWeight: "300" }}> Monstarz</span> - An
+              e-commerce store along with admin dashboard
+            </StyledText>
+            <StyledText style={{ fontSize: "16px", minWidth: "35px" }}>
+              2023
+            </StyledText>
           </Flex>
-          <Flex style={{marginLeft: "3.5%"}} gap="8px" wrap>
+          <Flex style={{ marginLeft: "3.5%" }} gap="8px" wrap>
             <Tag color="#5ED3F3">React</Tag>
             <Tag color="#4096FF">Ant Design</Tag>
             <Tag color="#2F74C0">Typescript</Tag>
@@ -68,7 +77,86 @@ const Home = () => {
         </Col>
 
         <Col span={8}>
-          <Card hoverable>Card content</Card>
+          <Card hoverable>
+            <Image
+              style={{ width: "100%", height: "80%", opacity: "1" }}
+              src={wordplay}
+              alt="project 2 | Wordplay"
+            />
+          </Card>
+          <Flex
+            gap="middle"
+            style={{ margin: " 2% 3.5% 1%  3.5%", color: colors.black }}
+            justify="space-between"
+          >
+            <StyledText style={{ fontSize: "16px" }}>
+              <span style={{ fontWeight: "300" }}> Wordplay</span> - A simple
+              fun to play web game
+            </StyledText>
+            <StyledText style={{ fontSize: "16px", minWidth: "35px" }}>
+              2024
+            </StyledText>
+          </Flex>
+          <Flex style={{ marginLeft: "3.5%" }} gap="8px" wrap>
+            <Tag color="#5ED3F3">React</Tag>
+            <Tag color="#006494">Firebase</Tag>
+            <Tag color="#4096FF">Ant Design</Tag>
+            <Tag color="#2F74C0">Typescript</Tag>
+          </Flex>
+        </Col>
+
+        <Col span={12}>
+          <Card hoverable>
+            <Image
+              style={{ width: "100%", height: "100%", opacity: "0.9", border: `1px solid #dee2e6`}}
+              src={travelo}
+              alt="project 3 | Nexters"
+            />
+          </Card>
+          <Flex
+            gap="middle"
+            style={{ margin: " 2% 3.5% 1%  3.5%", color: colors.black }}
+            justify="space-between"
+          >
+            <StyledText style={{ fontSize: "16px" }}>
+              <span style={{ fontWeight: "300" }}> Travelo</span> - A travel
+              site to arrange tours and treks
+            </StyledText>
+            <StyledText style={{ fontSize: "16px", minWidth: "35px" }}>
+              2023
+            </StyledText>
+          </Flex>
+          <Flex style={{ marginLeft: "3.5%" }} gap="8px" wrap>
+            <Tag color="#006494">Next.js</Tag>
+            <Tag color="#4096FF">Tailwindcss</Tag>
+            <Tag color="#2F74C0">Typescript</Tag>
+          </Flex>
+        </Col>
+
+        <Col span={12}>
+          <Card hoverable>
+            <Image
+              style={{ width: "100%", height: "100%", opacity: "0.9" }}
+              src={nexters}
+              alt="project 3 | Nexters"
+            />
+          </Card>
+          <Flex
+            gap="middle"
+            style={{ margin: " 2% 3.5% 1%  3.5%", color: colors.black }}
+            justify="space-between"
+          >
+            <StyledText style={{ fontSize: "16px" }}>
+              <span style={{ fontWeight: "300" }}> Nexters</span> - A real estate site 
+            </StyledText>
+            <StyledText style={{ fontSize: "16px", minWidth: "35px" }}>
+              2022
+            </StyledText>
+          </Flex>
+          <Flex style={{ marginLeft: "3.5%" }} gap="8px" wrap>
+            <Tag color="#006494">HTML</Tag>
+            <Tag color="#4096FF">CSS</Tag>
+          </Flex>
         </Col>
       </Row>
     </StyledContainer>

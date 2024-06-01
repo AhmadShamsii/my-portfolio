@@ -14,7 +14,7 @@ const StyledContainer = styled(Col)<{ isDesktop: boolean }>`
     isDesktop ? "1px solid lightgray" : "none"};
   border-bottom: ${({ isDesktop }) =>
     isDesktop ? "none" : "1px solid lightgray"};
-  height: ${({ isDesktop }) => (isDesktop ? "100vh" : "auto")};
+  min-height: ${({ isDesktop }) => (isDesktop ? "100vh" : "auto")};
 `;
 
 const List = styled.ul<{ isDesktop: boolean }>`
@@ -45,7 +45,7 @@ const ListItem = styled.li<{ selected: boolean; isLogo: boolean }>`
 const NavBar = () => {
   const router = useRouter();
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const isDesktop = useMediaQuery({ query: "(min-width: 800px)" });
+  const isDesktop = useMediaQuery({ query: "(min-width: 1000px)" });
 
   const items = [
     {
