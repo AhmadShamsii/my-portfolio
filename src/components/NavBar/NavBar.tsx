@@ -6,23 +6,24 @@ import styled from "styled-components";
 import "./../../app/global.css";
 import { colors } from "@/utils/colors";
 import Image from "next/image";
-import logo from "./../../../public/Untitled.svg";
+import logo from "./../../../public/logo.svg";
 
 const StyledContainer = styled(Col)<{ isDesktop: boolean }>`
-padding-top: 0px;
+  position: relative;
   border-right: ${({ isDesktop }) =>
     isDesktop ? "1px solid lightgray" : "none"};
   border-bottom: ${({ isDesktop }) =>
     isDesktop ? "none" : "1px solid lightgray"};
   height: ${({ isDesktop }) => (isDesktop ? "100vh" : "auto")};
 `;
+
 const List = styled.ul<{ isDesktop: boolean }>`
+  position: fixed;
+
   list-style-type: none;
   padding: 0;
   display: flex;
-  align-items: center;
-  text-align: start;
-  padding-top: ${({ isDesktop }) => (isDesktop ? "25%" : "0%")};
+  margin: ${({ isDesktop }) => (isDesktop ? "3% 0 0 20px" : "0%")};
   flex-direction: ${({ isDesktop }) => (isDesktop ? "column" : "row")};
 `;
 
@@ -51,8 +52,10 @@ const NavBar = () => {
       key: "/",
       label: (
         <Image
-          style={{ margin: "0", padding: "0" }}
-          priority
+          width="0"
+          height="0"
+          sizes="100vw"
+          style={{ width: "80%", height: "auto", margin: "7px auto" }}
           alt="Ahmad Shamsi"
           src={logo}
         />
@@ -82,7 +85,7 @@ const NavBar = () => {
   };
 
   return (
-    <StyledContainer isDesktop={isDesktop} span={ isDesktop ?  4 : 24}>
+    <StyledContainer isDesktop={isDesktop} span={isDesktop ? 4 : 24}>
       <List isDesktop={isDesktop}>
         {items?.map((item, index) => (
           <ListItem

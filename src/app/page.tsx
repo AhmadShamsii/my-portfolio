@@ -26,6 +26,7 @@ const StyledDesc = styled(Text)`
   font-size: 30px;
   font-style: normal;
   color: ${colors.darkgray};
+  /* margin-top: 10px; */
 `;
 
 const Home = () => {
