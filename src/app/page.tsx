@@ -47,6 +47,7 @@ const StyledDesc = styled(Text)`
 `;
 
 const Home = () => {
+  console.log('test 1')
   return (
     <StyledContainer>
       <StyledText>Hello there, </StyledText>
