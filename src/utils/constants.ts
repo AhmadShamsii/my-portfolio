@@ -1,7 +1,3 @@
-const maxMobileViewWidth = 500;
-const { innerWidth } = window;
-export const isMobileView = innerWidth <= maxMobileViewWidth;
-
 export const project1Tags = [
     {
       color: "#5ED3F3",

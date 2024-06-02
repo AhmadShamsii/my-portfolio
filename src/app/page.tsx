@@ -1,14 +1,29 @@
 "use client";
 import { colors } from "@/utils/colors";
-import { Card, Col, Divider, Row} from "antd";
+import { Card, Col, Divider, Row } from "antd";
 import Typography from "antd/es/typography/Typography";
 import styled from "styled-components";
 import monstarz from "./../../public/monstarz.png";
 import wordplay from "./../../public/wordplay.png";
 import nexters from "./../../public/nexters.png";
 import travelo from "./../../public/travelo.png";
+import reactLogo from "./../../public/reactlogo.svg";
+import nextjslogo from "./../../public/nextjslogo.svg";
+import typescriptlogo from "./../../public/typescriptlogo.svg";
+import javascriptlogo from "./../../public/javascriptlogo.svg";
+import antdlogo from "./../../public/antdlogo.svg";
+import muilogo from "./../../public/muilogo.svg";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
-import { project1Tags, project2Tags, project3Tags, project4Tags } from "@/utils/constants";
+import {
+  project1Tags,
+  project2Tags,
+  project3Tags,
+  project4Tags,
+} from "@/utils/constants";
+import Meta from "antd/es/card/Meta";
+import Image from "next/image";
+import { StyledCard } from "@/components/ProjectCard/styles";
+import TexhnologiesCard from "@/components/TechnologiesCard/TechnologiesCard";
 const Text = Typography;
 
 const StyledContainer = styled.div`
@@ -30,12 +45,6 @@ const StyledDesc = styled(Text)`
   font-style: normal;
   color: ${colors.darkgray};
 `;
-
-const StyledCard = styled(Card)`
-  border: 1px solid #ced4da;
-`;
-
-
 
 const Home = () => {
   return (
@@ -63,7 +72,6 @@ const Home = () => {
             tags={project1Tags}
           />
         </Col>
-
         <Col span={8}>
           <ProjectCard
             imageSrc={wordplay}
@@ -75,7 +83,6 @@ const Home = () => {
             tags={project2Tags}
           />
         </Col>
-
         <Col span={12}>
           <ProjectCard
             imageSrc={travelo}
@@ -87,7 +94,6 @@ const Home = () => {
             tags={project3Tags}
           />
         </Col>
-
         <Col span={12}>
           <ProjectCard
             imageSrc={nexters}
@@ -99,6 +105,17 @@ const Home = () => {
             tags={project4Tags}
           />
         </Col>
+      </Row>
+      <Divider />
+      <StyledText style={{ marginBottom: "30px" }}>Technologies</StyledText>
+
+      <Row gutter={[16, 16]}>
+        <TexhnologiesCard logo={reactLogo} technology={"React"} />
+        <TexhnologiesCard logo={nextjslogo} technology={"Nextjs"} />
+        <TexhnologiesCard logo={typescriptlogo} technology={"Typescript"} />
+        <TexhnologiesCard logo={javascriptlogo} technology={"Javascript"} />
+        <TexhnologiesCard logo={antdlogo} technology={"Ant Design"} />
+        <TexhnologiesCard logo={muilogo} technology={"Material UI"} />
       </Row>
     </StyledContainer>
   );

@@ -12,12 +12,16 @@ const ProjectCard = ({
   projectYear,
   tags,
 }: any) => {
-
-    return (
+  return (
     <>
       <StyledCard hoverable>
         <Image
-          style={{ width: "100%", height: "100%", opacity: "0.75", border: "1px solid #ced4da" }}
+          style={{
+            width: "100%",
+            height: "100%",
+            opacity: "0.75",
+            border: "1px solid #ced4da",
+          }}
           src={imageSrc}
           alt={imageAltText}
         />
@@ -36,12 +40,8 @@ const ProjectCard = ({
         </StyledText>
       </Flex>
       <Flex style={{ marginLeft: "3.5%" }} gap="8px" wrap>
-        {tags?.map((item:any) => (
-          <Tag
-           color={item.color}
-          >
-            {item?.tag}
-          </Tag>
+        {tags?.map((item: any) => (
+          <Tag color={item.color}>{item?.tag}</Tag>
         ))}
       </Flex>
     </>
