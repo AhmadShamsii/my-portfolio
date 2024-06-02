@@ -7,6 +7,7 @@ import muilogo from "./../../public/muilogo.svg";
 import tailwindcsslogo from "./../../public/tailwindcsslogo.svg";
 import csslogo from "./../../public/csslogo.svg";
 import htmllogo from "./../../public/htmllogo.svg";
+import framermotionlogo from "./../../public/framermotionlogo.svg";
 
 export const project1Tags = [
     {
@@ -90,6 +91,10 @@ export const project1Tags = [
       technology: "Material UI",
     },
     {
+      logo: framermotionlogo,
+      technology: "Framer ",
+    },
+    {
       logo: tailwindcsslogo,
       technology: "Tailwindcss",
     },
@@ -102,3 +107,6 @@ export const project1Tags = [
       technology: "HTML",
     },
   ];
+
+export  const FAST_SCROLL = 20;
+export  const SLOW_SCROLL = 35;

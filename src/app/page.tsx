@@ -1,6 +1,6 @@
 "use client";
 import { colors } from "@/utils/colors";
-import {  Col, Divider, Row } from "antd";
+import { Col, Divider, Row } from "antd";
 import Typography from "antd/es/typography/Typography";
 import styled from "styled-components";
 import monstarz from "./../../public/monstarz.png";
@@ -101,7 +101,7 @@ const Home = () => {
       <Divider />
       <StyledText style={{ marginBottom: "30px" }}>Technologies</StyledText>
 
-      <Row>
+      <Row style={{overflow: "hidden", whiteSpace: "nowrap"}}>
         <TexhnologiesCard technologies={technlogies} />
       </Row>
     </StyledContainer>
