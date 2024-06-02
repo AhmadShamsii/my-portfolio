@@ -1,18 +1,12 @@
 "use client";
 import { colors } from "@/utils/colors";
-import { Card, Col, Divider, Row } from "antd";
+import {  Col, Divider, Row } from "antd";
 import Typography from "antd/es/typography/Typography";
 import styled from "styled-components";
 import monstarz from "./../../public/monstarz.png";
 import wordplay from "./../../public/wordplay.png";
 import nexters from "./../../public/nexters.png";
 import travelo from "./../../public/travelo.png";
-import reactLogo from "./../../public/reactlogo.svg";
-import nextjslogo from "./../../public/nextjslogo.svg";
-import typescriptlogo from "./../../public/typescriptlogo.svg";
-import javascriptlogo from "./../../public/javascriptlogo.svg";
-import antdlogo from "./../../public/antdlogo.svg";
-import muilogo from "./../../public/muilogo.svg";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import {
   project1Tags,
@@ -20,9 +14,7 @@ import {
   project3Tags,
   project4Tags,
 } from "@/utils/constants";
-import Meta from "antd/es/card/Meta";
-import Image from "next/image";
-import { StyledCard } from "@/components/ProjectCard/styles";
+import { technlogies } from "@/utils/constants";
 import TexhnologiesCard from "@/components/TechnologiesCard/TechnologiesCard";
 const Text = Typography;
 
@@ -109,13 +101,8 @@ const Home = () => {
       <Divider />
       <StyledText style={{ marginBottom: "30px" }}>Technologies</StyledText>
 
-      <Row gutter={[16, 16]}>
-        <TexhnologiesCard logo={reactLogo} technology={"React"} />
-        <TexhnologiesCard logo={nextjslogo} technology={"Nextjs"} />
-        <TexhnologiesCard logo={typescriptlogo} technology={"Typescript"} />
-        <TexhnologiesCard logo={javascriptlogo} technology={"Javascript"} />
-        <TexhnologiesCard logo={antdlogo} technology={"Ant Design"} />
-        <TexhnologiesCard logo={muilogo} technology={"Material UI"} />
+      <Row>
+        <TexhnologiesCard technologies={technlogies} />
       </Row>
     </StyledContainer>
   );
