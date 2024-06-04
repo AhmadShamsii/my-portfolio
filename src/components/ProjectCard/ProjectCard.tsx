@@ -5,42 +5,41 @@ import { colors } from "@/utils/colors";
 import { StyledText } from "@/app/page";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
-import { useDispatch } from "react-redux";
-import { setMonstarzDetails } from "@/lib/features/projects/slice";
+import React, { useEffect } from "react";
+import useMeasure from "react-use-measure";
 
-const ProjectCard = ({
+interface ProjectCardProps {
+  imageSrc: any;
+  imageAltText: string;
+  projectTitle: string;
+  projectDesc: string;
+  projectYear: string;
+  tags: any[];
+  setImageDimensions:any,
+  index:number,
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({
   imageSrc,
   imageAltText,
   projectTitle,
   projectDesc,
   projectYear,
   tags,
-}: any) => {
+  setImageDimensions,
+  index,
+}) => {
   const router = useRouter();
   const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] };
 
-  const myElementRef = useRef<HTMLDivElement>(null);
-
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-  const dispatch = useDispatch();
+  const [ref, { width, height }] = useMeasure();
 
   useEffect(() => {
-    // Check if the element exists
-    if (myElementRef.current) {
-      // Get the dimensions
-      const width = myElementRef.current.offsetWidth;
-      const height = myElementRef.current.offsetHeight;
-
-      // Update the state with the new dimensions
-      setDimensions({ width, height });
-    }
-  }, []);
-  console.log(dimensions, "dimensions");
-
-  useEffect(() => {
-    dispatch(setMonstarzDetails(dimensions));
-  }, []);
+    setImageDimensions((prevDimensions:any) => ({
+      ...prevDimensions,
+      [index + 1]: { width, height },
+    }));
+  }, [index, setImageDimensions, width, height]);
 
   return (
     <>
@@ -48,9 +47,9 @@ const ProjectCard = ({
         <motion.div
           whileHover={{ scaleX: 1.02, scaleY: 1.03 }}
           transition={transition}
-            ref={myElementRef}
-          >
+        >
           <Image
+            ref={ref}
             onClick={() => router.push("/monstarz")}
             style={{
               borderRadius: "5px",

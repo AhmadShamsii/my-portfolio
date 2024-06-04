@@ -8,7 +8,10 @@ import tailwindcsslogo from "./../../public/tailwindcsslogo.svg";
 import csslogo from "./../../public/csslogo.svg";
 import htmllogo from "./../../public/htmllogo.svg";
 import framermotionlogo from "./../../public/framermotionlogo.svg";
-
+import monstarz from "./../../public/monstarz.png";
+import wordplay from "./../../public/wordplay.png";
+import nexters from "./../../public/nexters.png";
+import travelo from "./../../public/travelo.png";
 export const project1Tags = [
     {
       color: "#5ED3F3",
@@ -105,6 +108,49 @@ export const project1Tags = [
     {
       logo: htmllogo,
       technology: "HTML",
+    },
+  ];
+
+  export const cardData = [
+    {
+      id: 1,
+      imageSrc: monstarz,
+      imageAltText: "project 1 | Monstar",
+      projectTitle: "Monstarz",
+      projectDesc: "An e-commerce store along with admin dashboard",
+      projectYear: "2023",
+      tags: project1Tags,
+      span: 16,
+    },
+    {
+      id: 2,
+      imageSrc: wordplay,
+      imageAltText: "project 2 | Wordplay",
+      projectTitle: "Wordplay",
+      projectDesc: "A simple fun to play web game",
+      projectYear: "2024",
+      tags: project2Tags,
+      span: 8,
+    },
+    {
+      id: 3,
+      imageSrc: travelo,
+      imageAltText: "project 3 | Travelo",
+      projectTitle: "Travelo",
+      projectDesc: "A travel site to arrange tours and treks",
+      projectYear: "2023",
+      tags: project3Tags,
+      span: 12,
+    },
+    {
+      id: 4,
+      imageSrc: nexters,
+      imageAltText: "project 4 | Nexters",
+      projectTitle: "Nexters",
+      projectDesc: "A real estate site",
+      projectYear: "2022",
+      tags: project4Tags,
+      span: 12,
     },
   ];
 

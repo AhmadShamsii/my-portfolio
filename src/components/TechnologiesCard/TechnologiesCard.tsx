@@ -48,7 +48,7 @@ const TexhnologiesCard = ({ technologies }: any) => {
 
   return (
     <motion.div
-      style={{ x: xTranslation }}
+      style={{ x: xTranslation, margin: "10px 0" }}
       onHoverStart={() => {
         setMustFinish(true);
         setDuration(SLOW_SCROLL);

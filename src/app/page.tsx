@@ -1,21 +1,13 @@
 "use client";
-import { colors } from "@/utils/colors";
+import { useState } from "react";
 import { Col, Divider, Row } from "antd";
 import Typography from "antd/es/typography/Typography";
-import styled from "styled-components";
-import monstarz from "./../../public/monstarz.png";
-import wordplay from "./../../public/wordplay.png";
-import nexters from "./../../public/nexters.png";
-import travelo from "./../../public/travelo.png";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
-import {
-  project1Tags,
-  project2Tags,
-  project3Tags,
-  project4Tags,
-} from "@/utils/constants";
-import { technlogies } from "@/utils/constants";
 import TexhnologiesCard from "@/components/TechnologiesCard/TechnologiesCard";
+import styled from "styled-components";
+import { colors } from "@/utils/colors";
+import { technlogies } from "@/utils/constants";
+import { cardData } from "@/utils/constants";
 const Text = Typography;
 
 const StyledContainer = styled.div`
@@ -39,6 +31,10 @@ const StyledDesc = styled(Text)`
 `;
 
 const Home = () => {
+  const [imageDimensions, setImageDimensions] = useState<{
+    [key: string]: { width: number; height: number };
+  }>({});
+
   return (
     <StyledContainer>
       <StyledText>Hello there, </StyledText>
@@ -53,55 +49,31 @@ const Home = () => {
       <Divider />
       <StyledText style={{ marginBottom: "30px" }}>Projects</StyledText>
       <Row gutter={[24, 24]}>
-        <Col span={16}>
-          <ProjectCard
-            imageSrc={monstarz}
-            imageAltText={"project 1 | Monstar"}
-            projectTitle={"Monstarz"}
-            projectDesc="An
-              e-commerce store along with admin dashboard"
-            projectYear="2023"
-            tags={project1Tags}
-          />
-        </Col>
-        <Col span={8}>
-          <ProjectCard
-            imageSrc={wordplay}
-            imageAltText={"project 2 | Wordplay"}
-            projectTitle={"Wordplay"}
-            projectDesc="A simple
-              fun to play web game"
-            projectYear="2024"
-            tags={project2Tags}
-          />
-        </Col>
-        <Col span={12}>
-          <ProjectCard
-            imageSrc={travelo}
-            imageAltText={"project 3 | Travelo"}
-            projectTitle={"Travelo"}
-            projectDesc="A travel
-            site to arrange tours and treks"
-            projectYear="2023"
-            tags={project3Tags}
-          />
-        </Col>
-        <Col span={12}>
-          <ProjectCard
-            imageSrc={nexters}
-            imageAltText={"project 4 | Nexters"}
-            projectTitle={"Nexters"}
-            projectDesc=" A real
-            estate site"
-            projectYear="2022"
-            tags={project4Tags}
-          />
-        </Col>
+        {cardData.map((data, index) => (
+          <Col key={`col-${index}`} span={data?.span}>
+            <ProjectCard
+              imageSrc={data.imageSrc}
+              imageAltText={data.imageAltText}
+              projectTitle={data.projectTitle}
+              projectDesc={data.projectDesc}
+              projectYear={data.projectYear}
+              tags={data.tags}
+              setImageDimensions={setImageDimensions}
+              index={index}
+            />
+            {imageDimensions[data.id] && (
+              <>
+                <p>Width: {imageDimensions[data.id].width}px</p>
+                <p>Height: {imageDimensions[data.id].height}px</p>
+              </>
+            )}
+          </Col>
+        ))}
       </Row>
       <Divider />
       <StyledText style={{ marginBottom: "30px" }}>Technologies</StyledText>
 
-      <Row style={{overflow: "hidden", whiteSpace: "nowrap"}}>
+      <Row style={{ overflow: "hidden", whiteSpace: "nowrap",  }}>
         <TexhnologiesCard technologies={technlogies} />
       </Row>
     </StyledContainer>
