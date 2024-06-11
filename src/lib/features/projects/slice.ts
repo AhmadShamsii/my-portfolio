@@ -1,5 +1,5 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { projectStates } from "./types";
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { projectStates } from './types';
 
 export const initialState: projectStates = {
   monstarz: {
@@ -22,28 +22,28 @@ interface Dimensions {
 }
 
 export const projectsSlice = createSlice({
-  name: "projects",
+  name: 'projects',
   initialState,
   reducers: {
-    setMonstarzDetails: (state:any, action: PayloadAction<Dimensions>) => {
-      console.log(action.payload, '1')
+    setMonstarzDetails: (state: any, action: PayloadAction<Dimensions>) => {
       state.monstarz.dimensions = action.payload;
     },
-    setWordplayDetails: (state:any, action: PayloadAction<Dimensions>) => {
-      console.log(action.payload, '2')
+    setWordplayDetails: (state: any, action: PayloadAction<Dimensions>) => {
       state.wordplay.dimensions = action.payload;
     },
-    setTraveloDetails: (state:any, action: PayloadAction<Dimensions>) => {
-      console.log(action.payload, '3')
+    setTraveloDetails: (state: any, action: PayloadAction<Dimensions>) => {
       state.travelo.dimensions = action.payload;
     },
-    setNextersDetails: (state:any, action: PayloadAction<Dimensions>) => {
-      console.log(action.payload, '4')
+    setNextersDetails: (state: any, action: PayloadAction<Dimensions>) => {
       state.nexters.dimensions = action.payload;
     },
   },
 });
 
-export const { setMonstarzDetails,setWordplayDetails ,setTraveloDetails,setNextersDetails} =
-  projectsSlice.actions;
+export const {
+  setMonstarzDetails,
+  setWordplayDetails,
+  setTraveloDetails,
+  setNextersDetails,
+} = projectsSlice.actions;
 export default projectsSlice.reducer;

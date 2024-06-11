@@ -41,6 +41,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     }));
   }, [index, setImageDimensions, width, height]);
 
+  const project = projectTitle.toLocaleLowerCase();
   return (
     <>
       <StyledCard>
@@ -50,7 +51,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         >
           <Image
             ref={ref}
-            onClick={() => router.push('/monstarz')}
+            onClick={() => router.push(`projects/${project}`)}
             style={{
               borderRadius: '5px',
               width: '100%',

@@ -13,7 +13,6 @@ import { monstarzSelector } from '@/lib/features/projects/selectors';
 const Monstarz = () => {
   const { dimensions } = useSelector(monstarzSelector);
   const transition = { duration: 0.4, easeInOut: [0.6, 0.01, -0.05, 0.9] };
-  console.log('deugging');
   return (
     <>
       <motion.div
