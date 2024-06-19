@@ -38,6 +38,8 @@ const Project = ({ params }: { params: { project: string } }) => {
     return monstarzImg;
   };
 
+  console.log('debugginh');
+
   return (
     <>
       <motion.div
