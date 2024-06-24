@@ -9,6 +9,7 @@ import {
   traveloSelector,
   nextersSelector,
 } from '@/lib/features/projects/selectors';
+
 import monstarzImg from './../../../../public/monstarzImg.png';
 import wordplay from './../../../../public/wordplay.png';
 import nexters from './../../../../public/nexters.png';
