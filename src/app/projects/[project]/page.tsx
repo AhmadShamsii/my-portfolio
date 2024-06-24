@@ -37,7 +37,7 @@ const Project = ({ params }: { params: { project: string } }) => {
     else if (params.project === 'nexters') return nexters;
     return monstarzImg;
   };
-  console.log('asd');
+
   return (
     <>
       <motion.div
