@@ -5,7 +5,6 @@ import "./../app/global.css";
 import { useMediaQuery } from "react-responsive";
 import { Row } from "antd";
 import { useEffect, useState } from "react";
-import StoreProvider from "./StoreProvider";
 export default function RootLayout({
   children,
 }: {
@@ -21,20 +20,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <StoreProvider>
-          {isMounted &&
-            (isDesktop ? (
-              <Row>
-                <NavBar />
-                <MainContent>{children}</MainContent>
-              </Row>
-            ) : (
-              <div>
-                <NavBar />
-                <MainContent>{children}</MainContent>
-              </div>
-            ))}
-        </StoreProvider>
+        {isMounted &&
+          (isDesktop ? (
+            <Row>
+              <NavBar />
+              <MainContent>{children}</MainContent>
+            </Row>
+          ) : (
+            <div>
+              <NavBar />
+              <MainContent>{children}</MainContent>
+            </div>
+          ))}
       </body>
     </html>
   );
