@@ -14,7 +14,6 @@ interface ProjectCardProps {
   projectDesc: string;
   projectYear: string;
   tags: any[];
-  setImageDimensions: any;
   index: number;
 }
 
@@ -25,7 +24,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   projectDesc,
   projectYear,
   tags,
-  setImageDimensions,
   index,
 }) => {
   const router = useRouter();
