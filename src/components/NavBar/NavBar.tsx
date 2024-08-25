@@ -55,7 +55,12 @@ const NavBar = () => {
           width="0"
           height="0"
           sizes="100vw"
-          style={{ width: "80%", height: "auto", margin: "7px auto" }}
+          style={{
+            width: "80%",
+            height: "auto",
+            margin: "7px auto",
+            cursor: "pointer",
+          }}
           alt="Ahmad Shamsi"
           src={logo}
         />

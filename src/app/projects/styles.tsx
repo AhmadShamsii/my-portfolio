@@ -15,6 +15,7 @@ const StyledProjectTitle = styled.div`
 const StyledProjectDesc = styled.div`
   font-size: 18px;
   color: #a2a7a3;
+  font-family: "Bricolage Grotesque", sans-serif;
 `;
 
 export { StyledProjectTitle, StyledProjectDetails, StyledProjectDesc };
