@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import monstarzImg from "./../../../../public/monstarzImg.png";
 
-const ProjectImage = ({ getImage }: any) => {
+const ProjectImage = () => {
   return (
     <motion.div
       className="w-32 h-32 bg-blue-500 rounded-full"
@@ -21,25 +22,6 @@ const ProjectImage = ({ getImage }: any) => {
           backgroundColor: "#FAFAFC",
         }}
       >
-        {/* <video
-          muted
-          loop
-          playsInline
-          style={{
-            borderRadius: "5px",
-            width: "70%",
-            height: "70%",
-            opacity: "0.75",
-            paddingTop: "10%",
-            display: "block",
-            margin: "0px auto",
-          }}
-          // controls
-          autoPlay
-        >
-          <source src="/videos/monstarzvideo.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video> */}
         <Image
           style={{
             borderRadius: "5px",
@@ -50,7 +32,7 @@ const ProjectImage = ({ getImage }: any) => {
             display: "block",
             margin: "0px auto",
           }}
-          src={getImage}
+          src={monstarzImg}
           alt={"imageAltText"}
         />
       </div>

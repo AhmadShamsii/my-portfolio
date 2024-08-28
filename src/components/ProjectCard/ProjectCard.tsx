@@ -45,6 +45,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               height: "100%",
               opacity: "0.75",
               border: "1px solid #ced4da",
+              cursor: "pointer",
             }}
             src={imageSrc}
             alt={imageAltText}

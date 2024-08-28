@@ -4,7 +4,7 @@ import {
   StyledProjectDesc,
   StyledProjectDetails,
   StyledProjectTitle,
-} from "../../styles";
+} from "../../../app/projects/styles";
 import { Col, Divider, Image, Row } from "antd";
 import {
   ArrowUpOutlined,
@@ -13,8 +13,8 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 
-import monstarzCollection from "./../../../../../public/monstarzCollection.png";
-import monstarzAdmin from "./../../../../../public/monstarz-admin.png";
+import monstarzCollection from "./../../../../public/monstarzCollection.png";
+import monstarzAdmin from "./../../../../public/monstarz-admin.png";
 
 const ProjectDetails = () => {
   const ref = useRef(null);
