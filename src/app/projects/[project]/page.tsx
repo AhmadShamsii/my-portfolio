@@ -3,6 +3,7 @@
 
 import Monstarz from "@/components/Monstarz";
 import Wordplay from "@/components/Wordplay";
+import Youfirst from "@/components/Youfirst";
 
 const Project = ({ params }: { params: { project: string } }) => {
   if (params?.project === "monstarz") {
@@ -10,13 +11,11 @@ const Project = ({ params }: { params: { project: string } }) => {
   } else if (params?.project === "wordplay") {
     return <Wordplay />;
   }
-  // else if (condition === "C") {
-  //   return <ComponentC />;
-  // } else if (condition === "D") {
-  //   return <ComponentD />;
-  // } else {
-  //   return null; // or a default component
-  // }
+  else if (params?.project === "youfirst") {
+    return <Youfirst />;
+  } else {
+    return null; // or a default component
+  }
 };
 
 export default Project;
