@@ -6,6 +6,7 @@ import Wordplay from "@/components/Wordplay";
 import Youfirst from "@/components/Youfirst";
 
 const Project = ({ params }: { params: { project: string } }) => {
+  console.log('check')
   if (params?.project === "monstarz") {
     return <Monstarz />;
   } else if (params?.project === "wordplay") {
