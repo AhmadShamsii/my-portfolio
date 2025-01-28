@@ -5,16 +5,12 @@ import {
   StyledProjectDetails,
   StyledProjectTitle,
 } from "../../../app/projects/styles";
-import { Col, Divider, Image, Row } from "antd";
+import { Col, Divider, Row } from "antd";
 import {
-  ArrowUpOutlined,
   GithubOutlined,
   RocketTwoTone,
-  UserOutlined,
 } from "@ant-design/icons";
 
-import monstarzCollection from "./../../../../public/monstarzCollection.png";
-import monstarzAdmin from "./../../../../public/monstarz-admin.png";
 
 const ProjectDetails = () => {
   const ref = useRef(null);

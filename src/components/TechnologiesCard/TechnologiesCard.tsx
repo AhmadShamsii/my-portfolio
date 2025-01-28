@@ -1,12 +1,12 @@
 import { StyledText } from "@/app/page";
 import { Col } from "antd";
-import { StyledCard } from "../ProjectCard/styles";
 import Image from "next/image";
 import { colors } from "@/utils/colors";
 import { animate, motion, useMotionValue } from "framer-motion";
 import useMeasure from "react-use-measure";
 import { useEffect, useState } from "react";
 import { FAST_SCROLL, SLOW_SCROLL } from "@/utils/constants";
+import { StyledCard } from "./styles";
 // interface TexhnologiesCardProps {
 //   logo: any;
 //   technology: string;

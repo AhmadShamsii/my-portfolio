@@ -38,7 +38,7 @@ const StyledCard = styled(Card)`
   }
 
   &:hover {
-    transform: scale(1.15);
+    transform: scale(1.05);
     z-index: 10;
     opacity: 1;
   }

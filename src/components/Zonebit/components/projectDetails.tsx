@@ -5,17 +5,12 @@ import {
   StyledProjectDetails,
   StyledProjectTitle,
 } from "../../../app/projects/styles";
-import { Col, Divider, Image, Row } from "antd";
+import { Col, Divider, Row } from "antd";
 import {
-  ArrowUpOutlined,
   GithubOutlined,
   InfoCircleOutlined,
   RocketTwoTone,
-  UserOutlined,
 } from "@ant-design/icons";
-
-import monstarzCollection from "./../../../../public/monstarzCollection.png";
-import monstarzAdmin from "./../../../../public/monstarz-admin.png";
 
 const ProjectDetails = () => {
   const ref = useRef(null);
@@ -30,27 +25,28 @@ const ProjectDetails = () => {
       className="w-32 h-32 bg-blue-500 rounded-lg"
     >
       <StyledProjectDetails>
-        <StyledProjectTitle>YouFirst</StyledProjectTitle>
+        <StyledProjectTitle>ZoneBit</StyledProjectTitle>
         <StyledProjectDesc>
-          A Human Resource Management(HRM) software with employees details, attendance procedure, requests, surveys,
-          feeds and much more features.
+          Zonebit.com is the world’s first culture casino, fully licensed and managed by a doxxed team of
+          builders focused on revolutionizing the crypto casino industry by merging trading and gaming.
         </StyledProjectDesc>
         <Divider />
         <div>
-          I got the opportunity to work on Youfirst while working with JMM Technologies.
-          It is much more than a simple HRM software and includes much more features like
-          Language Selection, Recruitment Management, Surveys, Reports and many other features.
+          I got the opportunity to work on Zonebit as a side project. I was developing this project
+          with 3 more devs and got to learn so much with this project. We have implemented multiple
+          blockchain features in this like trades, casino, crypto charts and much more. I have got to learn
+          so much with this project and got hands on experience with blockchain apps.
         </div>
         <Divider />
         <Row>
           <Col span={6}>
             <div style={{ fontWeight: "bold" }}>Timeline</div>
-            <div>July - Jan 2025</div>
+            <div>Dec 2024 - Feb 2025</div>
           </Col>
           <Col span={6}>
             <div style={{ fontWeight: "bold" }}>Technologies</div>
             <div>
-              React <br /> GraphQl <br /> Ant Design <br /> TailwindCSS <br /> Zustand
+              React <br /> Web Sockets <br /> Web Workers <br /> TailwindCSS <br />
             </div>
           </Col>
           <Col span={6}>
@@ -58,10 +54,10 @@ const ProjectDetails = () => {
             <div>
               <a
                 style={{ color: "black" }}
-                href="https://apexcharts.com/"
+                href="https://documentation.chartiq.com/"
                 target="_blank"
               >
-                Apex Charts
+                ChartIQ
               </a>
               <br />
               <a
@@ -74,26 +70,10 @@ const ProjectDetails = () => {
               <br />
               <a
                 style={{ color: "black" }}
-                href="https://html2canvas.hertzen.com/"
+                href="https://tanstack.com/query/latest"
                 target="_blank"
               >
-                html2canvas
-              </a>
-              <br />
-              <a
-                style={{ color: "black" }}
-                href="https://sheetjs.com/"
-                target="_blank"
-              >
-                SheetJS
-              </a>
-              <br />
-              <a
-                style={{ color: "black" }}
-                href="https://mozilla.github.io/pdf.js/"
-                target="_blank"
-              >
-                PDF.js
+                React Query
               </a>
               <br />
             </div>
@@ -102,21 +82,12 @@ const ProjectDetails = () => {
             <div style={{ fontWeight: "bold" }}>Links</div>
             <a
               style={{ color: "black", marginRight: "5px" }}
-              href="https://hrm.hrmtests.com/"
+              href="https://www.zonebit.com/"
               target="_blank"
             >
               Test it Live!
             </a>
             <RocketTwoTone />
-            <br />
-            <a
-              style={{ color: "black", marginRight: "5px" }}
-              href="https://github.com/jmm-technologies/HRM-Frontend"
-              target="_blank"
-            >
-              Github Repo
-            </a>
-            <GithubOutlined />
           </Col>
         </Row>
       </StyledProjectDetails>
@@ -152,38 +123,44 @@ const ProjectDetails = () => {
           autoPlay
         >
           <source
-            src="https://res.cloudinary.com/dzxarcdmq/video/upload/v1737400399/2ab98887-1ffd-4e3e-b23a-e3d2b48dca4c_tpz1fi.mp4"
+            src="https://res.cloudinary.com/dzxarcdmq/video/upload/v1737645873/zonebit_mzbvnb.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
         </video>
         <StyledProjectDesc style={{ margin: "0 15%" }}>
-          User can add employees and assign permissions to each employee as per the user wants
-          with this only the selected modules will be visible to the user and user can only add/update those
-          modules as per the permission, more than this user can add departments, designations, reports, notices and
-          everything else.
+          Zonebit.com is the world’s first culture casino, fully licensed and managed by a doxxed team of
+          builders focused on revolutionizing the crypto casino industry by merging trading and gaming.
         </StyledProjectDesc>
         <div style={{ display: "flex", margin: "5% 0" }}>
           <img
-            style={{ width: "50%", height: "100%" }}
-            src="https://res.cloudinary.com/dzxarcdmq/image/upload/v1737401411/youfirst4_zfqu24.png"
+            style={{
+              width: "50%", height: "100%", opacity: "0.75", borderRadius: "5px",
+            }}
+            src="https://res.cloudinary.com/dzxarcdmq/image/upload/v1737646019/zonebit2_mmu3sm.png"
             alt={"imageAltText"}
           />
           <img
-            style={{ width: "40%", height: "100%", marginLeft: "10%" }}
-            src="https://res.cloudinary.com/dzxarcdmq/image/upload/v1737401219/youfirst3_rhndm7.png"
+            style={{
+              width: "40%", height: "100%", opacity: "0.75", marginLeft: "10%", borderRadius: "5px",
+            }}
+            src="https://res.cloudinary.com/dzxarcdmq/image/upload/v1737646022/zonebit4_qvgyui.png"
             alt={"imageAltText"}
           />
         </div>
         <div style={{ display: "flex", margin: "5% 0" }}>
           <img
-            style={{ width: "35%", height: "100%", marginRight: "15%" }}
-            src="https://res.cloudinary.com/dzxarcdmq/image/upload/v1737401822/youfirst2_xlf4im.png"
+            style={{
+              width: "35%", height: "100%", opacity: "0.75", marginRight: "15%", borderRadius: "5px",
+            }}
+            src="https://res.cloudinary.com/dzxarcdmq/image/upload/v1737646017/zonebit1_u245f6.png"
             alt={"imageAltText"}
           />
           <img
-            style={{ width: "50%", height: "100%" }}
-            src="https://res.cloudinary.com/dzxarcdmq/image/upload/v1737402420/youfirst1_wrkgnn.png"
+            style={{
+              width: "50%", height: "100%", opacity: "0.75", borderRadius: "5px",
+            }}
+            src="https://res.cloudinary.com/dzxarcdmq/image/upload/v1737646022/zonebit3_w0mk3o.png"
             alt={"imageAltText"}
           />
         </div>

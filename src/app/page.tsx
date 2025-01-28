@@ -7,6 +7,9 @@ import styled from "styled-components";
 import { colors } from "@/utils/colors";
 import { technlogies } from "@/utils/constants";
 import { cardData } from "@/utils/constants";
+import Experience from "@/components/Experience/Experience";
+import Contact from "./contact";
+import ContactForm from "@/components/Contact/Contact";
 
 const Text = Typography;
 
@@ -53,8 +56,8 @@ const Home = () => {
       </StyledDesc>
       <Divider />
       <StyledText style={{ marginBottom: "30px" }}>Projects</StyledText>
-      <Row gutter={[24, 24]}>
-        {cardData.map((data, index) => (
+      <Row style={{ margin: "0 10vw" }} gutter={[24, 24]}>
+        {cardData?.slice(0, 4)?.map((data, index) => (
           <Col key={`col-${index}`} span={data?.span}>
             <ProjectCard
               imageSrc={data.imageSrc}
@@ -68,12 +71,22 @@ const Home = () => {
           </Col>
         ))}
       </Row>
+
       <Divider />
       <StyledText style={{ marginBottom: "30px" }}>Technologies</StyledText>
-
-      <Row style={{ overflow: "hidden", whiteSpace: "nowrap" }}>
+      <Row style={{ overflow: "hidden", whiteSpace: "nowrap", margin: "0 11vw" }}>
         <TexhnologiesCard technologies={technlogies} />
       </Row>
+
+      <Divider />
+      <StyledText style={{ marginBottom: "30px" }}>Experience</StyledText>
+      <Experience />
+
+
+      <Divider />
+      <StyledText style={{ marginBottom: "30px" }}>Contact</StyledText>
+      <ContactForm />
+
     </StyledContainer>
   );
 };
