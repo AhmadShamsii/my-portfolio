@@ -8,7 +8,7 @@ import { colors } from "@/utils/colors";
 import { technlogies } from "@/utils/constants";
 import { cardData } from "@/utils/constants";
 import Experience from "@/components/Experience/Experience";
-import Contact from "./contact";
+import Contact from "./contact/page";
 import ContactForm from "@/components/Contact/Contact";
 
 const Text = Typography;

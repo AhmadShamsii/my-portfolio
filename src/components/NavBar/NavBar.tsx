@@ -1,14 +1,12 @@
 import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { useRouter } from "next/navigation";
-import { Col, Divider } from "antd";
+import { Col, Divider, Space } from "antd";
 import styled from "styled-components";
 import "./../../app/global.css";
 import { colors } from "@/utils/colors";
-import Image from "next/image";
-import logo from "./../../../public/logo.svg";
 
-const StyledContainer = styled(Col)<{ isDesktop: boolean }>`
+const StyledContainer = styled(Col) <{ isDesktop: boolean }>`
   position: relative;
   border-right: ${({ isDesktop }) =>
     isDesktop ? "1px solid lightgray" : "none"};
@@ -28,10 +26,7 @@ const List = styled.ul<{ isDesktop: boolean }>`
 `;
 
 const ListItem = styled.li<{ selected: boolean; isLogo: boolean }>`
-  padding: ${({ isLogo }) => (isLogo ? "0" : "10px 15px")};
   margin: ${({ isLogo }) => (isLogo ? "0" : "5px 0")};
-  margin-top: 5px;
-  padding-top: 10px;
   font-size: 18px;
   color: ${({ selected }) => (selected ? colors.black : colors.lightgray)};
   font-weight: ${({ selected }) => (selected ? "500" : "normal")};
@@ -42,6 +37,36 @@ const ListItem = styled.li<{ selected: boolean; isLogo: boolean }>`
   }
 `;
 
+const StyledLogo = styled.h2`
+color: ${colors.lightgray};
+cursor: pointer;
+font-weight: 400;
+font-family: "Kanit"; 
+font-size: 30px;
+`
+
+const StyledNavItem = styled.p`
+color: ${colors.lightgray};
+cursor: pointer;
+font-size: 20px;
+font-family: "Kanit";
+margin-top: 22px;
+`
+const StyledSocialItem = styled.a`
+color: ${colors.darkgray};
+cursor: pointer;
+font-size: 16px;
+font-family: "Kanit";
+border-bottom: 1px solid gray;
+width: fit-content;
+display: block;
+margin-bottom: 15px;
+&:hover {
+    color: black;
+    border-bottom: 1px solid black;
+  }
+`
+
 const NavBar = () => {
   const router = useRouter();
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -51,44 +76,46 @@ const NavBar = () => {
     {
       key: "/",
       label: (
-        <Image
-          width="0"
-          height="0"
-          sizes="100vw"
-          style={{
-            width: "80%",
-            height: "auto",
-            margin: "7px auto",
-            cursor: "pointer",
-          }}
-          alt="Ahmad Shamsi"
-          src={logo}
-        />
+        <StyledLogo>Ahmad Shamsi</StyledLogo>
+        // <Image
+        //   width="0"
+        //   height="0"
+        //   sizes="100vw"
+        //   style={{
+        //     width: "80%",
+        //     height: "auto",
+        //     margin: "7px auto",
+        //     cursor: "pointer",
+        //   }}
+        //   alt="Ahmad Shamsi"
+        //   src={logo}
+        // />
       ),
     },
 
     {
-      key: "about",
-      label: "About",
+      key: "/about",
+      label: (<StyledNavItem>About</StyledNavItem>),
     },
     {
-      key: "projects",
-      label: "Projects",
-    },
-    {
-      type: "divider",
+      key: "/projects",
+      label: (<StyledNavItem>Projects</StyledNavItem>),
     },
     {
       key: "contact",
-      label: "Contact",
+      label: (<StyledNavItem>Contact</StyledNavItem>),
+    },
+    {
+      type: "divider",
+      label: (<Divider />),
     },
   ];
 
   const handleClick = (index: number, item: any) => {
     setSelectedIndex(index);
-    router.push(item.key);
+    const absolutePath = item?.key?.startsWith("/") ? item.key : `/${item.key}`;
+    router.push(absolutePath);
   };
-
   return (
     <StyledContainer isDesktop={isDesktop} span={isDesktop ? 4 : 24}>
       <List isDesktop={isDesktop}>
@@ -102,7 +129,14 @@ const NavBar = () => {
             {item?.label}
           </ListItem>
         ))}
+        <Space direction="vertical" >
+          <StyledSocialItem target="_blank" href="https://github.com/AhmadShamsii">Github</StyledSocialItem>
+          <StyledSocialItem target="_blank" href="https://www.linkedin.com/in/ahmadshamsii/">Linkedin</StyledSocialItem>
+          <StyledSocialItem href="mailto:ahmaddshamsii@gmail.com">Email</StyledSocialItem>
+          <StyledSocialItem rel="noopener noreferrer" target="_blank" href="/resume.pdf" >Resume</StyledSocialItem>
+        </Space>
       </List>
+
     </StyledContainer>
   );
 };

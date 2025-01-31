@@ -1,0 +1,17 @@
+"use client"
+import Link from "next/link";
+import { StyledTitle } from "../projects/styles";
+import ContactForm from "@/components/Contact/Contact";
+
+const Contact = () => {
+  return (
+    <div style={{ marginTop: "4vh" }}>
+      <StyledTitle>Contact</StyledTitle>
+      <div style={{ marginTop: "50px" }}>
+        <ContactForm />
+      </div>
+    </div>
+  );
+};
+
+export default Contact;
