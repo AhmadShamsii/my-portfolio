@@ -38,7 +38,7 @@ const ProjectImage = () => {
           <VideoWrapper>
             <VideoPlayer muted loop autoPlay playsInline preload="auto">
               <source
-                src="https://res.cloudinary.com/dzxarcdmq/video/upload/v1724788905/wordplay_kooyad.mov"
+                src="https://res.cloudinary.com/dzxarcdmq/video/upload/v1738339322/wordplay_tvbgtz.mp4"
                 type="video/mp4"
               />
               Your browser does not support the video tag.

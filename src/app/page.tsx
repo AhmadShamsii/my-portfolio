@@ -20,7 +20,7 @@ const StyledContainer = styled.div`
 export const StyledText = styled(Text)`
   font-family: "Kanit", sans-serif;
   font-weight: 200;
-  font-size: 18px;
+  font-size: 1.2vw;
   font-style: normal;
   color: ${colors.lightgray};
 `;
@@ -28,7 +28,7 @@ export const StyledText = styled(Text)`
 const StyledDesc = styled(Text)`
   font-family: "Kanit", sans-serif;
   font-weight: 300;
-  font-size: 30px;
+  font-size: 2vw;
   font-style: normal;
   color: ${colors.darkgray};
   background-image: linear-gradient(

@@ -42,25 +42,25 @@ color: ${colors.lightgray};
 cursor: pointer;
 font-weight: 400;
 font-family: "Kanit"; 
-font-size: 30px;
+font-size: 2vw;
 `
 
 const StyledNavItem = styled.p`
 color: ${colors.lightgray};
 cursor: pointer;
-font-size: 20px;
+font-size: 1.2vw;
 font-family: "Kanit";
-margin-top: 22px;
+margin-top: 1.2vw;
 `
 const StyledSocialItem = styled.a`
 color: ${colors.darkgray};
 cursor: pointer;
-font-size: 16px;
+font-size: 1.1vw;
 font-family: "Kanit";
 border-bottom: 1px solid gray;
 width: fit-content;
 display: block;
-margin-bottom: 15px;
+margin-bottom: 1vw;
 &:hover {
     color: black;
     border-bottom: 1px solid black;
@@ -70,7 +70,7 @@ margin-bottom: 15px;
 const NavBar = () => {
   const router = useRouter();
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const isDesktop = useMediaQuery({ query: "(min-width: 1000px)" });
+  const isDesktop = useMediaQuery({ query: "(min-width: 800px)" });
 
   const items = [
     {
@@ -105,10 +105,6 @@ const NavBar = () => {
       key: "contact",
       label: (<StyledNavItem>Contact</StyledNavItem>),
     },
-    {
-      type: "divider",
-      label: (<Divider />),
-    },
   ];
 
   const handleClick = (index: number, item: any) => {
@@ -129,6 +125,7 @@ const NavBar = () => {
             {item?.label}
           </ListItem>
         ))}
+        <Divider />
         <Space direction="vertical" >
           <StyledSocialItem target="_blank" href="https://github.com/AhmadShamsii">Github</StyledSocialItem>
           <StyledSocialItem target="_blank" href="https://www.linkedin.com/in/ahmadshamsii/">Linkedin</StyledSocialItem>
