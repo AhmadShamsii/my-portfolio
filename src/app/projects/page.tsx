@@ -10,7 +10,7 @@ const Projects: React.FC = () => {
   let lastCategory: string | null = null;
 
   return (
-    <div style={{ marginTop: "4vh" }}>
+    <div style={{ marginTop: "2.5%" }}>
       <StyledTitle>Projects</StyledTitle>
       <Row style={{ margin: "0 10vw" }} gutter={[24, 24]}>
         {cardData?.map((data: any, index: number) => {

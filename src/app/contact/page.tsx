@@ -5,7 +5,7 @@ import ContactForm from "@/components/Contact/Contact";
 
 const Contact = () => {
   return (
-    <div style={{ marginTop: "4vh" }}>
+    <div style={{ marginTop: "2.5%" }}>
       <StyledTitle>Contact</StyledTitle>
       <div style={{ marginTop: "50px" }}>
         <ContactForm />

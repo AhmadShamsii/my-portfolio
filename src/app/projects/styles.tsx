@@ -20,9 +20,9 @@ const StyledProjectDesc = styled.div`
 `;
 const StyledTitle = styled.h1`
 font-weight: 200;
-  font-size: 38px;
+  font-size: 2vw;
    color: ${colors.lightgray};
-  font-family: "Bricolage Grotesque", sans-serif;
+  font-family: "Kanit", sans-serif;
   margin-bottom: 3vh;
 `;
 const StyledSubTitle = styled.h1`

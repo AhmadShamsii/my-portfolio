@@ -5,7 +5,7 @@ import { StyledText } from "./styles";
 
 const About = () => {
   return (
-    <div style={{ marginTop: "4vh" }}>
+    <div style={{ marginTop: "2.5%" }}>
       <StyledTitle>About Me</StyledTitle>
       <StyledText>
         Hey there! I’m an Electrical Engineering graduate who unexpectedly fell in love with coding after finishing college. My IT journey began with late-night study sessions and online courses, where I dived headfirst into the world of front-end development. After 7 months of persistence and lots of coffee, I landed my first job in tech – and there’s been no looking back since!
