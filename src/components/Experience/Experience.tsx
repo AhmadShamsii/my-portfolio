@@ -23,6 +23,8 @@ const Experience = () => {
         offset: ["0.5 1", "1.33 1"],
     });
 
+    console.log('checking')
+
     const scaleProgress1 = useTransform(scrollYProgress1, [0, 1], [0.9, 1]);
     const scaleProgress2 = useTransform(scrollYProgress2, [0, 1], [0.9, 1]);
 
