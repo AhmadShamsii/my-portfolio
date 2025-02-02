@@ -26,11 +26,11 @@ const StyledCard = styled(Card)`
   }
 
   .date {
-    font-size: 0.85rem;
+    font-size: 0.95vw;
   }
 
   .description {
-    font-size: 0.9rem;
+    font-size: 1vw;
   }
 
   &:nth-child(even) {

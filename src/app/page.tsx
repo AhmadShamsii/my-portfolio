@@ -5,11 +5,12 @@ import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import TexhnologiesCard from "@/components/TechnologiesCard/TechnologiesCard";
 import styled from "styled-components";
 import { colors } from "@/utils/colors";
-import { technlogies } from "@/utils/constants";
+import { desktopBreakpoint, largeDesktopBreakpoint, technlogies } from "@/utils/constants";
 import { cardData } from "@/utils/constants";
 import Experience from "@/components/Experience/Experience";
 import Contact from "./contact/page";
 import ContactForm from "@/components/Contact/Contact";
+import { useMediaQuery } from "react-responsive";
 
 const Text = Typography;
 
@@ -43,6 +44,8 @@ const StyledDesc = styled(Text)`
 `;
 
 const Home = () => {
+  const isDesktop = useMediaQuery({ query: largeDesktopBreakpoint });
+
   return (
     <StyledContainer>
       <StyledText>Hello there, </StyledText>
@@ -56,7 +59,7 @@ const Home = () => {
       </StyledDesc>
       <Divider />
       <StyledText style={{ marginBottom: "30px" }}>Projects</StyledText>
-      <Row style={{ margin: "0 10vw" }} gutter={[24, 24]}>
+      <Row style={{ margin: isDesktop ? "0 10vw" : "0vw" }} gutter={[24, 24]}>
         {cardData?.slice(0, 4)?.map((data, index) => (
           <Col key={`col-${index}`} span={data?.span}>
             <ProjectCard
@@ -74,7 +77,7 @@ const Home = () => {
 
       <Divider />
       <StyledText style={{ marginBottom: "30px" }}>Technologies</StyledText>
-      <Row style={{ overflow: "hidden", whiteSpace: "nowrap", margin: "0 11vw" }}>
+      <Row style={{ overflow: "hidden", whiteSpace: "nowrap", margin: isDesktop ? "0 10vw" : "0 2vw" }}>
         <TexhnologiesCard technologies={technlogies} />
       </Row>
 

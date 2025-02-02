@@ -2,10 +2,14 @@ import { Badge, Space, Steps, Typography } from 'antd';
 import React, { useRef } from 'react';
 import { StyledSpace, StyledText, StyledTitle, StyledTitle2 } from './styles';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { largeDesktopBreakpoint } from '@/utils/constants';
+import { useMediaQuery } from 'react-responsive';
 
 const { Text, Title } = Typography;
 
 const Experience = () => {
+    const isDesktop = useMediaQuery({ query: largeDesktopBreakpoint });
+
     const ref1 = useRef(null);
     const ref2 = useRef(null);
 
@@ -24,7 +28,7 @@ const Experience = () => {
 
     return (
         <Steps
-            style={{ margin: "auto", width: "70vw", paddingLeft: "10vw" }}
+            style={{ width: isDesktop ? "70vw" : "100vw", paddingLeft: isDesktop ? "10vw" : "0vw" }}
             progressDot
             current={null}
             direction="vertical"
@@ -38,7 +42,7 @@ const Experience = () => {
                                 opacity: scrollYProgress1,
                             }}
                         >
-                            <StyledSpace>
+                            <StyledSpace style={{ width: isDesktop ? "50vw" : "70vw" }}>
                                 <Space style={{ rowGap: "0px" }} direction='vertical'>
                                     <StyledTitle>JMM TECHNOLOGIES</StyledTitle>
                                     <StyledTitle2>Software Engineer (ReactJS)</StyledTitle2>
@@ -57,7 +61,7 @@ const Experience = () => {
                                 opacity: scrollYProgress1,
                             }}
                         >
-                            <StyledText style={{ width: "50vw", marginTop: "20px", rowGap: "20px", display: "flex", flexDirection: "column", marginBottom: "20px" }}>
+                            <StyledText style={{ width: isDesktop ? "50vw" : "70vw", marginTop: "20px", rowGap: "20px", display: "flex", flexDirection: "column", marginBottom: "20px" }}>
                                 <Space>
                                     <Badge style={{ marginRight: "10px" }} status="default" />
                                     Developed and maintained HRM software using ReactJS and GraphQL, improving the efficiency of employee
@@ -86,7 +90,7 @@ const Experience = () => {
                                 opacity: scrollYProgress2,
                             }}
                         >
-                            <StyledSpace>
+                            <StyledSpace style={{ width: isDesktop ? "50vw" : "70vw" }}>
                                 <Space style={{ rowGap: "0px" }} direction='vertical'>
                                     <StyledTitle>SMART FORUM</StyledTitle>
                                     <StyledTitle2>Junior Software Engineer</StyledTitle2>
@@ -105,7 +109,7 @@ const Experience = () => {
                                 opacity: scrollYProgress2,
                             }}
                         >
-                            <StyledText style={{ width: "50vw", marginTop: "20px", rowGap: "20px", display: "flex", flexDirection: "column" }}>
+                            <StyledText style={{ width: isDesktop ? "50vw" : "70vw", marginTop: "20px", rowGap: "20px", display: "flex", flexDirection: "column" }}>
                                 <Space>
                                     <Badge style={{ marginRight: "10px" }} status="default" />
                                     Worked with Qualcomm development team and developed a project management tool for Qualcomm using React and

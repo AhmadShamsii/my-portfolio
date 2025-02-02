@@ -5,14 +5,17 @@ import { colors } from "@/utils/colors";
 import { animate, motion, useMotionValue } from "framer-motion";
 import useMeasure from "react-use-measure";
 import { useEffect, useState } from "react";
-import { FAST_SCROLL, SLOW_SCROLL } from "@/utils/constants";
+import { FAST_SCROLL, largeDesktopBreakpoint, SLOW_SCROLL } from "@/utils/constants";
 import { StyledCard } from "./styles";
+import { useMediaQuery } from "react-responsive";
 // interface TexhnologiesCardProps {
 //   logo: any;
 //   technology: string;
 // }
 
 const TexhnologiesCard = ({ technologies }: any) => {
+  const isDesktop = useMediaQuery({ query: largeDesktopBreakpoint });
+
   const [duration, setDuration] = useState(FAST_SCROLL);
   const [mustFinish, setMustFinish] = useState(false);
   const [rerender, setRerender] = useState(false);
@@ -62,7 +65,7 @@ const TexhnologiesCard = ({ technologies }: any) => {
       <Col style={{ display: "flex", gap: "20px" }}>
         {[...technologies, ...technologies]?.map((item: any) => (
           <StyledCard
-            style={{ width: "130px", height: "150px", display: "flex" }}
+            style={{ width: isDesktop ? "130px" : "100px", height: isDesktop ? "150px" : "120px", display: "flex" }}
             hoverable
           >
             <>

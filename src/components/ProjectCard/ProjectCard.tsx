@@ -53,7 +53,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </motion.div>
         <div style={{ display: "flex", justifyContent: "space-between", alignContent: "center" }}>
           <div className="card-title">
-            <StyledText style={{ fontSize: "16px" }}>
+            <StyledText style={{ fontSize: "1.15vw" }}>
               <span style={{ fontWeight: "300" }}>{projectTitle}</span>
             </StyledText>
           </div>

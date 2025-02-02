@@ -5,6 +5,7 @@ import { Col, Divider, Space } from "antd";
 import styled from "styled-components";
 import "./../../app/global.css";
 import { colors } from "@/utils/colors";
+import { desktopBreakpoint } from "@/utils/constants";
 
 const StyledContainer = styled(Col) <{ isDesktop: boolean }>`
   position: relative;
@@ -70,7 +71,7 @@ margin-bottom: 1vw;
 const NavBar = () => {
   const router = useRouter();
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const isDesktop = useMediaQuery({ query: "(min-width: 800px)" });
+  const isDesktop = useMediaQuery({ query: desktopBreakpoint });
 
   const items = [
     {
