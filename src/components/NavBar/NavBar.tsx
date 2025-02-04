@@ -99,6 +99,7 @@ const NavBar = () => {
     const absolutePath = item?.key?.startsWith("/") ? item.key : `/${item.key}`;
     router.push(absolutePath);
   };
+  console.log('testing')
   return (
     <StyledContainer isDesktop={isDesktop} span={isDesktop ? 4 : 24}>
       <List isDesktop={isDesktop}>
