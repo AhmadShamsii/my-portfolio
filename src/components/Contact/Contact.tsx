@@ -28,7 +28,7 @@ const ContactForm: React.FC = () => {
     };
 
     return (
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", margin: isDesktop ? "0 10vw" : "0 2vw", gap: "5vw" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", margin: isDesktop ? "50px 10vw 0 10vw" : "20px 2vw 20px 2vw", gap: "5vw" }}>
             <div style={{ marginTop: "2%" }}>
                 <StyledTitle>Let's Talk</StyledTitle>
                 <StyledText style={{ fontSize: "1.2vw", color: "gray" }}>
@@ -51,6 +51,7 @@ const ContactForm: React.FC = () => {
                 onFinish={onFinish}
                 layout="vertical"
                 requiredMark="optional"
+                size="small"
             >
                 <Form.Item
                     label={<StyledTitle>Name</StyledTitle>}
@@ -73,7 +74,7 @@ const ContactForm: React.FC = () => {
                     name="message"
                     rules={[{ required: true, message: "Please enter your message!" }]}
                 >
-                    <TextArea size="small" variant="borderless" style={{ borderBottom: "1px solid gray" }} rows={4} />
+                    <TextArea size="small" variant="borderless" style={{ borderBottom: "1px solid gray" }} rows={3} />
                 </Form.Item>
 
                 <Form.Item style={{ display: "flex", justifyContent: "end" }} label={null}>
