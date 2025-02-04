@@ -22,8 +22,16 @@ const List = styled.ul<{ isDesktop: boolean }>`
   list-style-type: none;
   padding: 0;
   display: flex;
-  margin: ${({ isDesktop }) => (isDesktop ? "3% 0 0 20px" : "0%")};
+  width: 100%;
+  align-items: ${({ isDesktop }) => (isDesktop ? "start" : "end")};
+  justify-content: center;
+  margin: ${({ isDesktop }) => (isDesktop ? "3% 0 0 20px" : "0 0 0 0")};
+  z-index: 10;
+  background-color: ${({ isDesktop }) => (!isDesktop ? colors.lightergray : "none")}; 
   flex-direction: ${({ isDesktop }) => (isDesktop ? "column" : "row")};
+  -webkit-box-shadow: ${({ isDesktop }) => (!isDesktop ? "0px 5px 18px -3px rgba(0,0,0,0.7)" : "none")};  
+-moz-box-shadow: ${({ isDesktop }) => (!isDesktop ? "0px 5px 18px -3px rgba(0,0,0,0.7)" : "none")}; 
+box-shadow:  ${({ isDesktop }) => (!isDesktop ? "0px 5px 18px -3px rgba(0,0,0,0.7)" : "none")}; 
 `;
 
 const ListItem = styled.li<{ selected: boolean; isLogo: boolean }>`
@@ -126,13 +134,13 @@ const NavBar = () => {
             {item?.label}
           </ListItem>
         ))}
-        <Divider />
-        <Space direction="vertical" >
-          <StyledSocialItem target="_blank" href="https://github.com/AhmadShamsii">Github</StyledSocialItem>
-          <StyledSocialItem target="_blank" href="https://www.linkedin.com/in/ahmadshamsii/">Linkedin</StyledSocialItem>
-          <StyledSocialItem href="mailto:ahmaddshamsii@gmail.com">Email</StyledSocialItem>
-          <StyledSocialItem rel="noopener noreferrer" target="_blank" href="/resume.pdf" >Resume</StyledSocialItem>
-        </Space>
+        {isDesktop && (<> <Divider />
+          <Space direction="vertical" >
+            <StyledSocialItem target="_blank" href="https://github.com/AhmadShamsii">Github</StyledSocialItem>
+            <StyledSocialItem target="_blank" href="https://www.linkedin.com/in/ahmadshamsii/">Linkedin</StyledSocialItem>
+            <StyledSocialItem href="mailto:ahmaddshamsii@gmail.com">Email</StyledSocialItem>
+            <StyledSocialItem rel="noopener noreferrer" target="_blank" href="/resume.pdf" >Resume</StyledSocialItem>
+          </Space></>)}
       </List>
 
     </StyledContainer>

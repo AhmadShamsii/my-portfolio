@@ -4,8 +4,12 @@ import emailjs from "emailjs-com";
 import TextArea from "antd/es/input/TextArea";
 import { ArrowRightOutlined, GithubOutlined, InstagramOutlined, LinkedinOutlined } from "@ant-design/icons";
 import { StyledText, StyledTitle } from "./styles";
+import { largeDesktopBreakpoint } from "@/utils/constants";
+import { useMediaQuery } from "react-responsive";
 
 const ContactForm: React.FC = () => {
+    const isDesktop = useMediaQuery({ query: largeDesktopBreakpoint });
+
     const [form] = Form.useForm();
 
     const onFinish = (values: any) => {
@@ -24,7 +28,7 @@ const ContactForm: React.FC = () => {
     };
 
     return (
-        <div style={{ display: "flex", justifyContent: "center", gap: "5vw" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", margin: isDesktop ? "0 10vw" : "0 2vw", gap: "5vw" }}>
             <div style={{ marginTop: "2%" }}>
                 <StyledTitle>Let's Talk</StyledTitle>
                 <StyledText style={{ fontSize: "14px", color: "gray" }}>
@@ -46,7 +50,6 @@ const ContactForm: React.FC = () => {
                 name="basic"
                 onFinish={onFinish}
                 layout="vertical"
-                style={{ width: "30%" }}
                 requiredMark="optional"
             >
                 <Form.Item
