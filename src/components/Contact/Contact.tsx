@@ -31,15 +31,15 @@ const ContactForm: React.FC = () => {
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", margin: isDesktop ? "0 10vw" : "0 2vw", gap: "5vw" }}>
             <div style={{ marginTop: "2%" }}>
                 <StyledTitle>Let's Talk</StyledTitle>
-                <StyledText style={{ fontSize: "14px", color: "gray" }}>
+                <StyledText style={{ fontSize: "1.2vw", color: "gray" }}>
                     I am based in <strong>Islamabad, Pakistan.</strong> <br />
                     You can contact me via form or mail me directly
                 </StyledText>
 
-                <StyledTitle style={{ fontSize: "16px" }}>Email</StyledTitle>
+                <StyledTitle style={{ fontSize: "1.2vw" }}>Email</StyledTitle>
                 <StyledText>ahmaddshamsii@gmail.com</StyledText>
 
-                <StyledTitle style={{ fontSize: "16px" }}>Connect</StyledTitle>
+                <StyledTitle style={{ fontSize: "1.2vw" }}>Connect</StyledTitle>
                 <StyledText>
                     <GithubOutlined /> <LinkedinOutlined /> <InstagramOutlined />
                 </StyledText>

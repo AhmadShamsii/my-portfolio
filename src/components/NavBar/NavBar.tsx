@@ -22,7 +22,7 @@ const List = styled.ul<{ isDesktop: boolean }>`
   list-style-type: none;
   padding: 0;
   display: flex;
-  width: 100%;
+  width: ${({ isDesktop }) => (isDesktop ? "auto" : "100%")};
   align-items: ${({ isDesktop }) => (isDesktop ? "start" : "end")};
   justify-content: center;
   margin: ${({ isDesktop }) => (isDesktop ? "3% 0 0 20px" : "0 0 0 0")};
