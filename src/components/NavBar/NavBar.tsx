@@ -18,29 +18,31 @@ const StyledContainer = styled(Col) <{ isDesktop: boolean }>`
 
 const List = styled.ul<{ isDesktop: boolean }>`
   position: fixed;
-  padding-left: ${({ isDesktop }) => (isDesktop ? "0" : "3.78%")};
+
   list-style-type: none;
-  /* display: flex; */
+  padding: 0;
+  display: flex;
   width: ${({ isDesktop }) => (isDesktop ? "auto" : "100%")};
-  align-items: ${({ isDesktop }) => (isDesktop ? "start" : "center")};
-  /* justify-content: space-between; */
+  align-items: ${({ isDesktop }) => (isDesktop ? "start" : "end")};
+  justify-content: center;
   margin: ${({ isDesktop }) => (isDesktop ? "3% 0 0 20px" : "0 0 0 0")};
   z-index: 10;
   background-color: ${({ isDesktop }) => (!isDesktop ? colors.lightergray : "none")}; 
   flex-direction: ${({ isDesktop }) => (isDesktop ? "column" : "row")};
-  -webkit-box-shadow: ${({ isDesktop }) => (!isDesktop ? "0px 1px 10px 0px rgba(0,0,0,0.22)" : "none")};  
--moz-box-shadow: ${({ isDesktop }) => (!isDesktop ? "0px 1px 10px 0px rgba(0,0,0,0.22)" : "none")}; 
-box-shadow:  ${({ isDesktop }) => (!isDesktop ? "0px 1px 10px 0px rgba(0,0,0,0.22)" : "none")}; 
+  -webkit-box-shadow: ${({ isDesktop }) => (!isDesktop ? "0px 5px 18px -3px rgba(0,0,0,0.7)" : "none")};  
+-moz-box-shadow: ${({ isDesktop }) => (!isDesktop ? "0px 5px 18px -3px rgba(0,0,0,0.7)" : "none")}; 
+box-shadow:  ${({ isDesktop }) => (!isDesktop ? "0px 5px 18px -3px rgba(0,0,0,0.7)" : "none")}; 
 `;
 
-const ListItem = styled.li<{ selected: boolean }>`
+const ListItem = styled.li<{ selected: boolean; isLogo: boolean }>`
+  margin: ${({ isLogo }) => (isLogo ? "0" : "5px 0")};
   font-size: 18px;
   color: ${({ selected }) => (selected ? colors.black : colors.lightgray)};
   font-weight: ${({ selected }) => (selected ? "500" : "normal")};
-  cursor: pointer;
+  cursor: ${({ isLogo }) => (isLogo ? "default" : "pointer")};
   transition: background-color 0.3s ease;
   &:hover {
-    color: ${colors.darkgray};
+    color: ${({ isLogo }) => (isLogo ? "inherit" : colors.darkgray)};
   }
 `;
 
@@ -52,12 +54,12 @@ font-family: "Kanit";
 font-size: 2vw;
 `
 
-const StyledNavItem = styled.p<{ isDesktop: boolean }>`
+const StyledNavItem = styled.p`
 color: ${colors.lightgray};
 cursor: pointer;
 font-size: 1.2vw;
 font-family: "Kanit";
-margin-top: ${({ isDesktop }) => (!isDesktop ? "0px" : "20px")};  
+margin-top: 1.2vw;
 `
 const StyledSocialItem = styled.a`
 color: ${colors.darkgray};
@@ -81,16 +83,36 @@ const NavBar = () => {
 
   const items = [
     {
+      key: "/",
+      label: (
+        <StyledLogo>Ahmad Shamsi</StyledLogo>
+        // <Image
+        //   width="0"
+        //   height="0"
+        //   sizes="100vw"
+        //   style={{
+        //     width: "80%",
+        //     height: "auto",
+        //     margin: "7px auto",
+        //     cursor: "pointer",
+        //   }}
+        //   alt="Ahmad Shamsi"
+        //   src={logo}
+        // />
+      ),
+    },
+
+    {
       key: "/about",
-      label: (<StyledNavItem isDesktop={isDesktop}>About</StyledNavItem>),
+      label: (<StyledNavItem>About</StyledNavItem>),
     },
     {
       key: "/projects",
-      label: (<StyledNavItem isDesktop={isDesktop}>Projects</StyledNavItem>),
+      label: (<StyledNavItem>Projects</StyledNavItem>),
     },
     {
       key: "contact",
-      label: (<StyledNavItem isDesktop={isDesktop}>Contact</StyledNavItem>),
+      label: (<StyledNavItem>Contact</StyledNavItem>),
     },
   ];
 
@@ -102,20 +124,16 @@ const NavBar = () => {
   return (
     <StyledContainer isDesktop={isDesktop} span={isDesktop ? 4 : 24}>
       <List isDesktop={isDesktop}>
-        <div style={{ display: "flex", flexDirection: isDesktop ? "column" : "row", justifyContent: "space-between" }}>
-          <StyledLogo onClick={() => router.push("/")}>Ahmad Shamsi</StyledLogo>
-          <div style={{ display: "flex", flexDirection: isDesktop ? "column" : "row", paddingRight: "3.78%", gap: "30px" }} >
-            {items?.map((item, index) => (
-              <ListItem
-                key={index}
-                selected={index === selectedIndex}
-                onClick={() => handleClick(index, item)}
-              >
-                {item?.label}
-              </ListItem>
-            ))}
-          </div>
-        </div>
+        {items?.map((item, index) => (
+          <ListItem
+            key={index}
+            selected={index === selectedIndex}
+            isLogo={item.key === "/"}
+            onClick={() => handleClick(index, item)}
+          >
+            {item?.label}
+          </ListItem>
+        ))}
         {isDesktop && (<> <Divider />
           <Space direction="vertical" >
             <StyledSocialItem target="_blank" href="https://github.com/AhmadShamsii">Github</StyledSocialItem>

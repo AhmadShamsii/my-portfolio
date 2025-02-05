@@ -6,7 +6,7 @@ const StyledTitle = styled.p`
   font-family: "Kanit", sans-serif;
   color: ${colors.darkgray};
   font-weight: light;
-  padding: 0px !important;
+  margin-top: 20px;
 `;
 const StyledText = styled.p`
   font-size: 1vw;
