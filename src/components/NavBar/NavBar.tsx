@@ -55,9 +55,8 @@ font-size: 2vw;
 const StyledNavItem = styled.p<{ isDesktop: boolean }>`
 color: ${colors.lightgray};
 cursor: pointer;
-font-size: 1.2vw;
 font-family: "Kanit";
-margin-top: ${({ isDesktop }) => (!isDesktop ? "0px" : "20px")};  
+margin-top:0px;  
 `
 const StyledSocialItem = styled.a`
 color: ${colors.darkgray};
@@ -82,15 +81,15 @@ const NavBar = () => {
   const items = [
     {
       key: "/about",
-      label: (<StyledNavItem isDesktop={isDesktop}>About</StyledNavItem>),
+      label: (<StyledNavItem style={{ fontSize: isDesktop ? "1.2vw" : "1.5vw", marginTop: isDesktop ? "20px" : "0px" }} isDesktop={isDesktop}>About</StyledNavItem>),
     },
     {
       key: "/projects",
-      label: (<StyledNavItem isDesktop={isDesktop}>Projects</StyledNavItem>),
+      label: (<StyledNavItem style={{ fontSize: isDesktop ? "1.2vw" : "1.5vw" }} isDesktop={isDesktop}>Projects</StyledNavItem>),
     },
     {
       key: "contact",
-      label: (<StyledNavItem isDesktop={isDesktop}>Contact</StyledNavItem>),
+      label: (<StyledNavItem style={{ fontSize: isDesktop ? "1.2vw" : "1.5vw" }} isDesktop={isDesktop}>Contact</StyledNavItem>),
     },
   ];
 
@@ -102,7 +101,7 @@ const NavBar = () => {
   return (
     <StyledContainer isDesktop={isDesktop} span={isDesktop ? 4 : 24}>
       <List isDesktop={isDesktop}>
-        <div style={{ display: "flex", flexDirection: isDesktop ? "column" : "row", justifyContent: "space-between" }}>
+        <div style={{ display: "flex", flexDirection: isDesktop ? "column" : "row", justifyContent: "space-between", alignItems: isDesktop ? "flex-start" : "center" }}>
           <StyledLogo onClick={() => router.push("/")}>Ahmad Shamsi</StyledLogo>
           <div style={{ display: "flex", flexDirection: isDesktop ? "column" : "row", paddingRight: "3.78%", gap: "30px" }} >
             {items?.map((item, index) => (

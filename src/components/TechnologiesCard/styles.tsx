@@ -25,10 +25,6 @@ const StyledCard = styled(Card)`
     }
   }
 
-  .date {
-    font-size: 0.85rem;
-  }
-
   .description {
     font-size: 0.9rem;
   }

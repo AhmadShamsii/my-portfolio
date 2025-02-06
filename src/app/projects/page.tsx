@@ -3,11 +3,13 @@ import React from "react";
 import { Col, Row } from "antd";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import { StyledSubTitle, StyledTitle } from "./styles";
-import { cardData } from "@/utils/constants";
+import { cardData, desktopBreakpoint } from "@/utils/constants";
+import { useMediaQuery } from "react-responsive";
 
 const Projects: React.FC = () => {
   // Track the last rendered category to avoid duplicate headings
   let lastCategory: string | null = null;
+  const isSmallDesktop = useMediaQuery({ query: desktopBreakpoint });
 
   return (
     <div style={{ marginTop: "2.5%" }}>

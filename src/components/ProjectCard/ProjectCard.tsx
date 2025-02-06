@@ -7,6 +7,8 @@ import { StyledText } from "@/app/page";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import React from "react";
+import { desktopBreakpoint } from "@/utils/constants";
+import { useMediaQuery } from "react-responsive";
 
 interface ProjectCardProps {
   imageSrc: any;
@@ -28,11 +30,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   const router = useRouter();
   const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] };
+  const isSmallDesktop = useMediaQuery({ query: desktopBreakpoint });
 
   const project = projectTitle.toLocaleLowerCase();
   return (
     <>
-      <StyledCard>
+      <StyledCard isSmallDesktop={isSmallDesktop}>
         <motion.div
           whileHover={{ scaleX: 1.02, scaleY: 1.03 }}
           transition={transition}
@@ -53,13 +56,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </motion.div>
         <div style={{ display: "flex", justifyContent: "space-between", alignContent: "center" }}>
           <div className="card-title">
-            <StyledText style={{ fontSize: "1.15vw" }}>
+            <StyledText style={{ fontSize: isSmallDesktop ? "1.15vw" : "1.8vw" }}>
               <span style={{ fontWeight: "300" }}>{projectTitle}</span>
             </StyledText>
           </div>
-          <div className="date">{projectYear}</div>
+          <div style={{ fontSize: isSmallDesktop ? "0.8vw" : "1.3vw" }}>{projectYear}</div>
         </div>
-        <div className="description">{projectDesc}</div>
+        <div style={{ fontSize: isSmallDesktop ? "1vw" : "1.5vw" }}>{projectDesc}</div>
       </StyledCard>
       {/* <Flex style={{ marginLeft: "3.5%" }} gap="8px" wrap>
         {tags?.map((item: any) => (

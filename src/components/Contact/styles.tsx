@@ -2,7 +2,6 @@ import { colors } from "@/utils/colors";
 import styled from "styled-components";
 
 const StyledTitle = styled.p`
-  font-size: 1.2vw;
   font-family: "Kanit", sans-serif;
   color: ${colors.darkgray};
   font-weight: light;
@@ -13,7 +12,6 @@ const StyledText = styled.p`
   font-family: "Kanit", sans-serif;
   color: ${colors.lightgray};
   font-weight: light;
-  margin-top: 20px;
 `;
 
 export { StyledTitle, StyledText };

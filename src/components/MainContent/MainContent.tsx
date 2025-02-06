@@ -6,7 +6,7 @@ import { desktopBreakpoint } from "@/utils/constants";
 const MainContent = ({ children }: any) => {
   const isDesktop = useMediaQuery({ query: desktopBreakpoint });
   return (
-    <Col style={{ padding: isDesktop ? "1% 3.78%" : "6vh 3.78%" }} span={isDesktop ? 20 : 24}>
+    <Col style={{ padding: isDesktop ? "1% 3.78%" : "5.5% 3.78%" }} span={isDesktop ? 20 : 24}>
       {children}
       <Footer />
     </Col>

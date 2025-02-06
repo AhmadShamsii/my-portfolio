@@ -21,7 +21,6 @@ const StyledContainer = styled.div`
 export const StyledText = styled(Text)`
   font-family: "Kanit", sans-serif;
   font-weight: 200;
-  font-size: 1.2vw;
   font-style: normal;
   color: ${colors.lightgray};
 `;
@@ -29,7 +28,6 @@ export const StyledText = styled(Text)`
 const StyledDesc = styled(Text)`
   font-family: "Kanit", sans-serif;
   font-weight: 300;
-  font-size: 2vw;
   font-style: normal;
   color: ${colors.darkgray};
   background-image: linear-gradient(
@@ -45,11 +43,12 @@ const StyledDesc = styled(Text)`
 
 const Home = () => {
   const isDesktop = useMediaQuery({ query: largeDesktopBreakpoint });
+  const isSmallDesktop = useMediaQuery({ query: desktopBreakpoint });
 
   return (
     <StyledContainer>
-      <StyledText>Hello there, </StyledText>
-      <StyledDesc>
+      <StyledText style={{ fontSize: isSmallDesktop ? "1.2vw" : "1.8vw" }} >Hello there, </StyledText>
+      <StyledDesc style={{ fontSize: isSmallDesktop ? "2vw" : "2.6vw" }}>
         Ahmad Shamsi is a frontend developer focused on React and Next.js,
         crafting user-friendly, high-performance web apps. Previously, he worked
         on various web development projects, honing his skills in modern

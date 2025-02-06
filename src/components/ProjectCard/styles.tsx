@@ -2,7 +2,7 @@
 import { Card } from "antd";
 import styled from "styled-components";
 
-const StyledCard = styled(Card)`
+const StyledCard = styled(Card) <{ isSmallDesktop: boolean }>`
   border: 1px solid #ced4da;
   color: #ffffffda;
   pointer-events: auto;
@@ -12,6 +12,9 @@ const StyledCard = styled(Card)`
   display: flex;
   flex-direction: column;
 
+  .ant-card-body {
+    padding: ${({ isSmallDesktop }) => (isSmallDesktop ? "24px" : "12px")};
+  }
   .card-title {
     position: relative;
     &::before {
@@ -27,10 +30,6 @@ const StyledCard = styled(Card)`
 
   .date {
     font-size: 0.95vw;
-  }
-
-  .description {
-    font-size: 1vw;
   }
 
   &:nth-child(even) {

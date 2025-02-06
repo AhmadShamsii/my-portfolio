@@ -13,12 +13,10 @@ justify-content: space-between;
 align-items: center;
 `;
 const StyledTitle = styled.h3`
-font-size: 1.2vw;
 font-weight: 600;
 margin-bottom: 0px;
 `;
 const StyledTitle2 = styled.h3`
-font-size: 1.2vw;
 margin-bottom: 0px;
 font-weight: 400;
 `;
