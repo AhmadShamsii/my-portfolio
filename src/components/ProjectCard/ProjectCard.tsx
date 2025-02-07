@@ -1,14 +1,14 @@
 // ProjectCard.tsx
 import Image from "next/image";
-import { StyledCard } from "./styles";
+import { StyledCard, StyledDescription, StyledYear } from "./styles";
 import { Flex, Tag } from "antd";
 import { colors } from "@/utils/colors";
-import { StyledText } from "@/app/page";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { desktopBreakpoint } from "@/utils/constants";
 import { useMediaQuery } from "react-responsive";
+import { StyledText } from "@/app/styles";
 
 interface ProjectCardProps {
   imageSrc: any;
@@ -56,13 +56,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </motion.div>
         <div style={{ display: "flex", justifyContent: "space-between", alignContent: "center" }}>
           <div className="card-title">
-            <StyledText style={{ fontSize: isSmallDesktop ? "1.15vw" : "1.8vw" }}>
+            <StyledText>
               <span style={{ fontWeight: "300" }}>{projectTitle}</span>
             </StyledText>
           </div>
-          <div style={{ fontSize: isSmallDesktop ? "0.8vw" : "1.3vw" }}>{projectYear}</div>
+          <StyledYear>{projectYear}</StyledYear>
         </div>
-        <div style={{ fontSize: isSmallDesktop ? "1vw" : "1.5vw" }}>{projectDesc}</div>
+        <StyledDescription >{projectDesc}</StyledDescription>
       </StyledCard>
       {/* <Flex style={{ marginLeft: "3.5%" }} gap="8px" wrap>
         {tags?.map((item: any) => (

@@ -140,7 +140,7 @@ export const technlogies = [
   },
   {
     logo: tailwindcsslogo,
-    technology: 'Tailwindcss',
+    technology: 'Tailwind',
   },
   {
     logo: csslogo,
@@ -205,7 +205,7 @@ export const cardData: ProjectData[] = [
     imageAltText: "project 4 | Wordplay",
     projectTitle: "Wordplay",
     projectDesc: "A simple fun-to-play web game",
-    projectYear: "2023 - 2024",
+    projectYear: "2024",
     tags: ["Game", "Fun"],
     span: 8,
     category: "Personal Projects",
@@ -261,3 +261,5 @@ export const SLOW_SCROLL = 35;
 
 export const largeDesktopBreakpoint = "(min-width: 1000px)"
 export const desktopBreakpoint = "(min-width: 800px)"
+export const tabletBreakpoint = "(min-width: 500px) and (max-width: 800px)"
+export const mobileBreakpoint = "(max-width: 500px)"

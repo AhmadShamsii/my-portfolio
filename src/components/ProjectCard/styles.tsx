@@ -1,4 +1,5 @@
 // styles.ts
+import { desktopBreakpoint, mobileBreakpoint, tabletBreakpoint } from "@/utils/constants";
 import { Card } from "antd";
 import styled from "styled-components";
 
@@ -44,4 +45,27 @@ const StyledCard = styled(Card) <{ isSmallDesktop: boolean }>`
 
 `;
 
-export { StyledCard };
+const StyledYear = styled.div`
+  @media ${desktopBreakpoint} {
+    font-size: 0.9vw;
+  }
+  @media ${tabletBreakpoint} {
+    font-size: 1.5vw;
+  }
+  @media ${mobileBreakpoint} {
+    font-size: 2vw;
+  }
+`;
+const StyledDescription = styled.div`
+  @media ${desktopBreakpoint} {
+    font-size: 1.1vw;
+  }
+  @media ${tabletBreakpoint} {
+    font-size: 1.7vw;
+  }
+  @media ${mobileBreakpoint} {
+    font-size: 2.2vw;
+  }
+`;
+
+export { StyledCard, StyledYear, StyledDescription };

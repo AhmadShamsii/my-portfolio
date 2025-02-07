@@ -46,12 +46,12 @@ const Experience = () => {
                         >
                             <StyledSpace style={{ width: isDesktop ? "50vw" : "70vw" }}>
                                 <Space style={{ rowGap: "0px" }} direction='vertical'>
-                                    <StyledTitle style={{ fontSize: isSmallDesktop ? "1.2vw" : "1.8vw" }} >JMM TECHNOLOGIES</StyledTitle>
-                                    <StyledTitle2 style={{ fontSize: isSmallDesktop ? "1.2vw" : "1.8vw" }}>Software Engineer (ReactJS)</StyledTitle2>
+                                    <StyledTitle>JMM TECHNOLOGIES</StyledTitle>
+                                    <StyledTitle2>Software Engineer (ReactJS)</StyledTitle2>
                                 </Space>
                                 <Space style={{ rowGap: "0px" }} direction='vertical'>
-                                    <StyledText style={{ fontSize: isDesktop ? "1vw" : "1.5vw" }} >Remote</StyledText>
-                                    <StyledText style={{ fontSize: isDesktop ? "1vw" : "1.5vw" }} >July 2024 - Present</StyledText>
+                                    <StyledText >Remote</StyledText>
+                                    <StyledText >July 2024 - Present</StyledText>
                                 </Space>
                             </StyledSpace>
                         </motion.div>
@@ -63,7 +63,7 @@ const Experience = () => {
                                 opacity: scrollYProgress1,
                             }}
                         >
-                            <StyledText style={{ fontSize: isDesktop ? "1vw" : "1.5vw", width: isDesktop ? "50vw" : "70vw", marginTop: "20px", rowGap: "20px", display: "flex", flexDirection: "column", marginBottom: "20px" }}>
+                            <StyledText style={{ width: isDesktop ? "50vw" : "70vw", marginTop: "20px", rowGap: "20px", display: "flex", flexDirection: "column", marginBottom: "20px" }}>
                                 <Space>
                                     <Badge style={{ marginRight: "10px" }} status="default" />
                                     Developed and maintained HRM software using ReactJS and GraphQL, improving the efficiency of employee
@@ -94,12 +94,12 @@ const Experience = () => {
                         >
                             <StyledSpace style={{ width: isDesktop ? "50vw" : "70vw" }}>
                                 <Space style={{ rowGap: "0px" }} direction='vertical'>
-                                    <StyledTitle style={{ fontSize: isSmallDesktop ? "1.2vw" : "1.8vw" }} >SMART FORUM</StyledTitle>
-                                    <StyledTitle2 style={{ fontSize: isSmallDesktop ? "1.2vw" : "1.8vw" }}>Junior Software Engineer</StyledTitle2>
+                                    <StyledTitle>SMART FORUM</StyledTitle>
+                                    <StyledTitle2>Junior Software Engineer</StyledTitle2>
                                 </Space>
                                 <Space style={{ rowGap: "0px" }} direction='vertical'>
-                                    <StyledText style={{ fontSize: isDesktop ? "1vw" : "1.5vw" }} >Islamabad, Pakistan</StyledText>
-                                    <StyledText style={{ fontSize: isDesktop ? "1vw" : "1.5vw" }} >Jan 2023 - July 2024</StyledText>
+                                    <StyledText>Islamabad, Pakistan</StyledText>
+                                    <StyledText>Jan 2023 - July 2024</StyledText>
                                 </Space>
                             </StyledSpace>
                         </motion.div>
@@ -111,7 +111,7 @@ const Experience = () => {
                                 opacity: scrollYProgress2,
                             }}
                         >
-                            <StyledText style={{ fontSize: isDesktop ? "1vw" : "1.5vw", width: isDesktop ? "50vw" : "70vw", marginTop: "20px", rowGap: "20px", display: "flex", flexDirection: "column" }}>
+                            <StyledText style={{ width: isDesktop ? "50vw" : "70vw", marginTop: "20px", rowGap: "20px", display: "flex", flexDirection: "column" }}>
                                 <Space>
                                     <Badge style={{ marginRight: "10px" }} status="default" />
                                     Worked with Qualcomm development team and developed a project management tool for Qualcomm using React and

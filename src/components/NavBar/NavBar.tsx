@@ -6,6 +6,7 @@ import styled from "styled-components";
 import "./../../app/global.css";
 import { colors } from "@/utils/colors";
 import { desktopBreakpoint } from "@/utils/constants";
+import { StyledLogo, StyledNavItem } from "./styles";
 
 const StyledContainer = styled(Col) <{ isDesktop: boolean }>`
   position: relative;
@@ -44,20 +45,6 @@ const ListItem = styled.li<{ selected: boolean }>`
   }
 `;
 
-const StyledLogo = styled.h2`
-color: ${colors.lightgray};
-cursor: pointer;
-font-weight: 400;
-font-family: "Kanit"; 
-font-size: 2vw;
-`
-
-const StyledNavItem = styled.p<{ isDesktop: boolean }>`
-color: ${colors.lightgray};
-cursor: pointer;
-font-family: "Kanit";
-margin-top:0px;  
-`
 const StyledSocialItem = styled.a`
 color: ${colors.darkgray};
 cursor: pointer;
@@ -81,15 +68,15 @@ const NavBar = () => {
   const items = [
     {
       key: "/about",
-      label: (<StyledNavItem style={{ fontSize: isDesktop ? "1.2vw" : "1.5vw", marginTop: isDesktop ? "20px" : "0px" }} isDesktop={isDesktop}>About</StyledNavItem>),
+      label: (<StyledNavItem style={{ marginTop: isDesktop ? "6vh" : "0px" }}>About</StyledNavItem>),
     },
     {
       key: "/projects",
-      label: (<StyledNavItem style={{ fontSize: isDesktop ? "1.2vw" : "1.5vw" }} isDesktop={isDesktop}>Projects</StyledNavItem>),
+      label: (<StyledNavItem >Projects</StyledNavItem>),
     },
     {
       key: "contact",
-      label: (<StyledNavItem style={{ fontSize: isDesktop ? "1.2vw" : "1.5vw" }} isDesktop={isDesktop}>Contact</StyledNavItem>),
+      label: (<StyledNavItem >Contact</StyledNavItem>),
     },
   ];
 

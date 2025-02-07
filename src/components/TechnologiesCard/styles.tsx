@@ -1,4 +1,5 @@
 // styles.ts
+import { desktopBreakpoint, mobileBreakpoint, tabletBreakpoint } from "@/utils/constants";
 import { Card } from "antd";
 import styled from "styled-components";
 
@@ -38,7 +39,18 @@ const StyledCard = styled(Card)`
     z-index: 10;
     opacity: 1;
   }
-
-`;
+    @media ${desktopBreakpoint} {
+      width: 130px;
+      height: 150px;
+    }
+    @media ${tabletBreakpoint} {
+      width: 100px;
+      height: 120px;
+    }
+    @media ${mobileBreakpoint} {
+      width: 80px;
+      height: 100px;
+    }
+  `;
 
 export { StyledCard };

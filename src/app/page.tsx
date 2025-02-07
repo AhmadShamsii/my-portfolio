@@ -5,12 +5,12 @@ import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import TexhnologiesCard from "@/components/TechnologiesCard/TechnologiesCard";
 import styled from "styled-components";
 import { colors } from "@/utils/colors";
-import { desktopBreakpoint, largeDesktopBreakpoint, technlogies } from "@/utils/constants";
+import { desktopBreakpoint, largeDesktopBreakpoint, mobileBreakpoint, tabletBreakpoint, technlogies } from "@/utils/constants";
 import { cardData } from "@/utils/constants";
 import Experience from "@/components/Experience/Experience";
-import Contact from "./contact/page";
 import ContactForm from "@/components/Contact/Contact";
 import { useMediaQuery } from "react-responsive";
+import { StyledDesc, StyledText } from "./styles";
 
 const Text = Typography;
 
@@ -18,28 +18,8 @@ const StyledContainer = styled.div`
   font-family: "Kanit", sans-serif;
   color: ${colors.lightgray};
 `;
-export const StyledText = styled(Text)`
-  font-family: "Kanit", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-  color: ${colors.lightgray};
-`;
 
-const StyledDesc = styled(Text)`
-  font-family: "Kanit", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  color: ${colors.darkgray};
-  background-image: linear-gradient(
-    90deg,
-    #7e8188 0%,
-    #404246 50%,
-    #404246 100%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-`;
+
 
 const Home = () => {
   const isDesktop = useMediaQuery({ query: largeDesktopBreakpoint });
@@ -47,8 +27,8 @@ const Home = () => {
 
   return (
     <StyledContainer>
-      <StyledText style={{ fontSize: isSmallDesktop ? "1.2vw" : "1.8vw" }} >Hello there, </StyledText>
-      <StyledDesc style={{ fontSize: isSmallDesktop ? "2vw" : "2.6vw" }}>
+      <StyledText >Hello there, </StyledText>
+      <StyledDesc>
         Ahmad Shamsi is a frontend developer focused on React and Next.js,
         crafting user-friendly, high-performance web apps. Previously, he worked
         on various web development projects, honing his skills in modern
@@ -57,8 +37,8 @@ const Home = () => {
         Pakistan.
       </StyledDesc>
       <Divider />
-      <StyledText style={{ marginBottom: "30px" }}>Projects</StyledText>
-      <Row style={{ margin: isDesktop ? "0 10vw" : "0vw" }} gutter={[24, 24]}>
+      <StyledText style={{ marginBottom: isSmallDesktop ? "30px" : "15px" }}>Projects</StyledText>
+      <Row style={{ margin: isDesktop ? "0 10vw" : "0vw" }} gutter={isSmallDesktop ? [24, 24] : [12, 12]}>
         {cardData?.slice(0, 4)?.map((data, index) => (
           <Col key={`col-${index}`} span={data?.span}>
             <ProjectCard
@@ -75,18 +55,18 @@ const Home = () => {
       </Row>
 
       <Divider />
-      <StyledText style={{ marginBottom: "30px" }}>Technologies</StyledText>
+      <StyledText style={{ marginBottom: isSmallDesktop ? "30px" : "15px" }}>Technologies</StyledText>
       <Row style={{ overflow: "hidden", whiteSpace: "nowrap", margin: isDesktop ? "0 10vw" : "0 2vw" }}>
         <TexhnologiesCard technologies={technlogies} />
       </Row>
 
       <Divider />
-      <StyledText style={{ marginBottom: "30px" }}>Experience</StyledText>
+      <StyledText style={{ marginBottom: isSmallDesktop ? "30px" : "15px" }}>Experience</StyledText>
       <Experience />
 
 
       <Divider />
-      <StyledText style={{ marginBottom: "30px" }}>Contact</StyledText>
+      <StyledText style={{ marginBottom: isSmallDesktop ? "30px" : "15px" }}>Contact</StyledText>
       <ContactForm />
 
     </StyledContainer>
