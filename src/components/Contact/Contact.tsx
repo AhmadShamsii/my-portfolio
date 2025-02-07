@@ -1,10 +1,10 @@
 import React from "react";
-import { Form, Input, Button, message, Divider } from "antd";
+import { Form, Input, message, Divider } from "antd";
 import emailjs from "emailjs-com";
 import TextArea from "antd/es/input/TextArea";
 import { ArrowRightOutlined, GithubOutlined, InstagramOutlined, LinkedinOutlined } from "@ant-design/icons";
 import { StyledButton, StyledContainer, StyledText, StyledTitle } from "./styles";
-import { desktopBreakpoint, largeDesktopBreakpoint, mobileBreakpoint } from "@/utils/constants";
+import { largeDesktopBreakpoint, mobileBreakpoint } from "@/utils/constants";
 import { useMediaQuery } from "react-responsive";
 
 const ContactForm: React.FC = () => {
