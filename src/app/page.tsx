@@ -1,6 +1,5 @@
 "use client";
 import { Col, Divider, Row } from "antd";
-import Typography from "antd/es/typography/Typography";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import TexhnologiesCard from "@/components/TechnologiesCard/TechnologiesCard";
 import styled from "styled-components";
@@ -12,14 +11,10 @@ import ContactForm from "@/components/Contact/Contact";
 import { useMediaQuery } from "react-responsive";
 import { StyledDesc, StyledText } from "./styles";
 
-const Text = Typography;
-
 const StyledContainer = styled.div`
   font-family: "Kanit", sans-serif;
   color: ${colors.lightgray};
 `;
-
-
 
 const Home = () => {
   const isDesktop = useMediaQuery({ query: largeDesktopBreakpoint });
