@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { usePathname, useRouter } from "next/navigation";
-import { Col, Divider, Space } from "antd";
+import { Divider, Space } from "antd";
 import styled from "styled-components";
 import "./../../app/global.css";
 import { colors } from "@/utils/colors";
