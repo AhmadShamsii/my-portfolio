@@ -1,30 +1,19 @@
 import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Col, Divider, Space } from "antd";
 import styled from "styled-components";
 import "./../../app/global.css";
 import { colors } from "@/utils/colors";
 import { desktopBreakpoint } from "@/utils/constants";
-import { StyledLogo, StyledNavItem } from "./styles";
-
-const StyledContainer = styled(Col) <{ isDesktop: boolean }>`
-  position: relative;
-  border-right: ${({ isDesktop }) =>
-    isDesktop ? "1px solid lightgray" : "none"};
-  border-bottom: ${({ isDesktop }) =>
-    isDesktop ? "none" : "1px solid lightgray"};
-  min-height: ${({ isDesktop }) => (isDesktop ? "100vh" : "auto")};
-`;
+import { ListItem, StyledContainer, StyledLogo, StyledNavItem, StyledSocialItem } from "./styles";
 
 const List = styled.ul<{ isDesktop: boolean }>`
   position: fixed;
   padding-left: ${({ isDesktop }) => (isDesktop ? "0" : "3.78%")};
   list-style-type: none;
-  /* display: flex; */
   width: ${({ isDesktop }) => (isDesktop ? "auto" : "100%")};
   align-items: ${({ isDesktop }) => (isDesktop ? "start" : "center")};
-  /* justify-content: space-between; */
   margin: ${({ isDesktop }) => (isDesktop ? "3% 0 0 20px" : "0 0 0 0")};
   z-index: 10;
   background-color: ${({ isDesktop }) => (!isDesktop ? colors.lightergray : "none")}; 
@@ -34,49 +23,34 @@ const List = styled.ul<{ isDesktop: boolean }>`
 box-shadow:  ${({ isDesktop }) => (!isDesktop ? "0px 1px 10px 0px rgba(0,0,0,0.22)" : "none")}; 
 `;
 
-const ListItem = styled.li<{ selected: boolean }>`
-  font-size: 18px;
-  color: ${({ selected }) => (selected ? colors.black : colors.lightgray)};
-  font-weight: ${({ selected }) => (selected ? "500" : "normal")};
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  &:hover {
-    color: ${colors.darkgray};
-  }
-`;
-
-const StyledSocialItem = styled.a`
-color: ${colors.darkgray};
-cursor: pointer;
-font-size: 1.1vw;
-font-family: "Kanit";
-border-bottom: 1px solid gray;
-width: fit-content;
-display: block;
-margin-bottom: 1vw;
-&:hover {
-    color: black;
-    border-bottom: 1px solid black;
-  }
-`
-
 const NavBar = () => {
   const router = useRouter();
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const pathname = usePathname()
   const isDesktop = useMediaQuery({ query: desktopBreakpoint });
+
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const items = [
     {
       key: "/about",
-      label: (<StyledNavItem style={{ marginTop: isDesktop ? "6vh" : "0px" }}>About</StyledNavItem>),
+      label: (<StyledNavItem style={{ marginTop: isDesktop ? "6vh" : "0px" }}
+        selectedIndex={selectedIndex}
+        index={0}
+      >About</StyledNavItem>),
     },
     {
       key: "/projects",
-      label: (<StyledNavItem >Projects</StyledNavItem>),
+      label: (<StyledNavItem
+        selectedIndex={selectedIndex}
+        index={1}
+      >Projects</StyledNavItem>),
     },
     {
       key: "contact",
-      label: (<StyledNavItem >Contact</StyledNavItem>),
+      label: (<StyledNavItem
+        selectedIndex={selectedIndex}
+        index={2}
+      >Contact</StyledNavItem>),
     },
   ];
 
@@ -85,11 +59,12 @@ const NavBar = () => {
     const absolutePath = item?.key?.startsWith("/") ? item.key : `/${item.key}`;
     router.push(absolutePath);
   };
+
   return (
     <StyledContainer isDesktop={isDesktop} span={isDesktop ? 4 : 24}>
       <List isDesktop={isDesktop}>
         <div style={{ display: "flex", flexDirection: isDesktop ? "column" : "row", justifyContent: "space-between", alignItems: isDesktop ? "flex-start" : "center" }}>
-          <StyledLogo onClick={() => router.push("/")}>Ahmad Shamsi</StyledLogo>
+          <StyledLogo style={{ color: pathname == "/" ? `${colors.mediumgray}` : `${colors.lightgray}` }} onClick={() => { router.push("/"); setSelectedIndex(null) }}>Ahmad Shamsi</StyledLogo>
           <div style={{ display: "flex", flexDirection: isDesktop ? "column" : "row", paddingRight: "3.78%", gap: "30px" }} >
             {items?.map((item, index) => (
               <ListItem
