@@ -36,12 +36,22 @@ font-weight: 200;
     }
 `;
 const StyledSubTitle = styled.h1`
-font-weight: 200;
+  font-weight: 200;
   font-size: 35px;
    color: ${colors.lightgray};
   font-family: "Bricolage Grotesque", sans-serif;
-  margin-bottom: 3vh;
   text-align: center;
+
+    @media ${desktopBreakpoint} {
+    font-size: 2vw;
+    margin-bottom: 3vh;
+  }
+  @media ${tabletBreakpoint} {
+    font-size: 2.8vw;
+  }
+  @media ${mobileBreakpoint} {
+    font-size: 3.5vw;
+  }
 `;
 
 export { StyledProjectTitle, StyledProjectDetails, StyledProjectDesc, StyledTitle, StyledSubTitle };
