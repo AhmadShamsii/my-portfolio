@@ -51,6 +51,7 @@ const StyledText = styled.p`
 
 const StyledButton = styled(Button)`
 border-bottom: 1px solid gray;
+padding: 5px 0;
 @media ${desktopBreakpoint} {
     font-size: 1.25vw;
   }
@@ -58,7 +59,7 @@ border-bottom: 1px solid gray;
     font-size: 2vw;
   }
   @media ${mobileBreakpoint} {
-    grid-template-columns: 1fr;
+    font-size: 2.5vw;
   }
 `;
 export { StyledTitle, StyledText, StyledContainer, StyledButton };

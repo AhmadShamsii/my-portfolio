@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { usePathname, useRouter } from "next/navigation";
 import { Divider, Space } from "antd";
@@ -28,7 +28,27 @@ const NavBar = () => {
   const pathname = usePathname()
   const isDesktop = useMediaQuery({ query: desktopBreakpoint });
 
+  const [isScrollingDown, setIsScrollingDown] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
+
+  // Effect to track scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      if (typeof window !== "undefined") {
+        const currentScrollY = window.scrollY;
+        setIsScrollingDown(currentScrollY > lastScrollY);
+        setLastScrollY(currentScrollY);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
+
 
   const items = [
     {
@@ -61,7 +81,7 @@ const NavBar = () => {
   };
 
   return (
-    <StyledContainer isDesktop={isDesktop} span={isDesktop ? 4 : 24}>
+    <StyledContainer isScrollingDown={isScrollingDown} isDesktop={isDesktop} span={isDesktop ? 4 : 24}>
       <List isDesktop={isDesktop}>
         <div style={{ display: "flex", flexDirection: isDesktop ? "column" : "row", justifyContent: "space-between", alignItems: isDesktop ? "flex-start" : "center" }}>
           <StyledLogo style={{ color: pathname == "/" ? `${colors.mediumgray}` : `${colors.lightgray}` }} onClick={() => { router.push("/"); setSelectedIndex(null) }}>Ahmad Shamsi</StyledLogo>

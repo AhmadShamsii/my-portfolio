@@ -73,15 +73,11 @@ const TexhnologiesCard = ({ technologies }: any) => {
               />
               <StyledText
                 style={{
-                  textAlign: "center",
-                  paddingTop: 0,
-                  fontSize: "16px",
-                  fontWeight: "300",
-                  color: colors.darkgray,
-
                   display: "flex",
                   alignItems: "flex-end",
                   justifyContent: "center",
+
+                  fontWeight: "400"
                 }}
               >
                 {item.technology}

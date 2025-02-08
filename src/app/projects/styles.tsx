@@ -1,4 +1,5 @@
 import { colors } from "@/utils/colors";
+import { desktopBreakpoint, mobileBreakpoint, tabletBreakpoint } from "@/utils/constants";
 import styled from "styled-components";
 
 const StyledProjectDetails = styled.div`
@@ -20,10 +21,19 @@ const StyledProjectDesc = styled.div`
 `;
 const StyledTitle = styled.h1`
 font-weight: 200;
-  font-size: 2vw;
    color: ${colors.lightgray};
   font-family: "Kanit", sans-serif;
   margin-bottom: 3vh;
+
+    @media ${desktopBreakpoint} {
+      font-size: 2vw;
+    }
+    @media ${tabletBreakpoint} {
+      font-size: 2.5vw;
+    }
+    @media ${mobileBreakpoint} {
+      font-size: 3.5vw;
+    }
 `;
 const StyledSubTitle = styled.h1`
 font-weight: 200;

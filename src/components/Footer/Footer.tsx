@@ -1,18 +1,18 @@
 import { CopyrightOutlined } from "@ant-design/icons"
 import { Divider, Typography } from "antd"
-import { StyledSpace, StyledText } from "./styles";
+import { StyledContainer, StyledSpace, StyledText } from "./styles";
 
 const Footer = () => {
     const { Text } = Typography;
 
     return (
-        <div>
+        <StyledContainer>
             <Divider />
             <StyledSpace>
-                <Text>Ahmad Shamsi</Text>
+                <StyledText>Ahmad Shamsi</StyledText>
                 <StyledText>Copyright <CopyrightOutlined /> {new Date().getFullYear()} </StyledText>
             </StyledSpace>
-        </div>
+        </StyledContainer>
     )
 }
 export default Footer

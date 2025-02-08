@@ -8,7 +8,7 @@ const Contact = () => {
     <div style={{ marginTop: "2.5%" }}>
       <StyledTitle>Contact</StyledTitle>
       <div style={{ marginTop: "50px" }}>
-        <ContactForm />
+        <ContactForm isContactPage={true} />
       </div>
     </div>
   );

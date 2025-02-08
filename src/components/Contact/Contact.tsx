@@ -2,12 +2,13 @@ import React from "react";
 import { Form, Input, message, Divider } from "antd";
 import emailjs from "emailjs-com";
 import TextArea from "antd/es/input/TextArea";
-import { ArrowRightOutlined, GithubOutlined, InstagramOutlined, LinkedinOutlined } from "@ant-design/icons";
+import { ArrowRightOutlined, FileTextOutlined, GithubOutlined, InstagramOutlined, LinkedinOutlined, MailOutlined } from "@ant-design/icons";
 import { StyledButton, StyledContainer, StyledText, StyledTitle } from "./styles";
 import { largeDesktopBreakpoint, mobileBreakpoint } from "@/utils/constants";
 import { useMediaQuery } from "react-responsive";
+import Link from "next/link";
 
-const ContactForm: React.FC = () => {
+const ContactForm: React.FC = ({ isContactPage = false }: any) => {
     const isDesktop = useMediaQuery({ query: largeDesktopBreakpoint });
     const isMobile = useMediaQuery({ query: mobileBreakpoint });
 
@@ -29,20 +30,24 @@ const ContactForm: React.FC = () => {
     };
 
     return (
-        <StyledContainer style={{ margin: isDesktop ? "50px 10vw 0 10vw" : "20px 2vw 20px 2vw" }}>
+        <StyledContainer style={{ minHeight: isContactPage ? "87vh" : "auto", margin: isDesktop ? "50px 10vw 0 10vw" : "20px 2vw 20px 2vw" }}>
             <div style={{ marginTop: "2%" }}>
                 <StyledTitle>Let's Talk</StyledTitle>
-                <StyledText style={{ color: "gray", marginTop: isDesktop ? "20px" : "10px" }}>
+                <StyledText style={{ color: "gray", marginBottom: isDesktop ? "20px" : "10px" }}>
                     I am based in <strong>Islamabad, Pakistan.</strong> <br />
                     You can contact me via form or mail me directly
                 </StyledText>
 
                 <StyledTitle>Email</StyledTitle>
-                <StyledText style={{ marginTop: isDesktop ? "20px" : "10px" }}>ahmaddshamsii@gmail.com</StyledText>
+                <StyledText style={{ marginBottom: isDesktop ? "20px" : "10px" }}>ahmaddshamsii@gmail.com</StyledText>
 
                 <StyledTitle>Connect</StyledTitle>
-                <StyledText style={{ marginTop: isDesktop ? "20px" : "10px" }}>
-                    <GithubOutlined /> <LinkedinOutlined /> <InstagramOutlined />
+                <StyledText style={{ marginBottom: isDesktop ? "20px" : "10px", cursor: "pointer", display: "flex", gap: "7px", marginTop: "5px" }}>
+                    <Link target="_blank" href="https://github.com/AhmadShamsii"> <GithubOutlined /> </Link>
+                    <Link target="_blank" href="https://www.linkedin.com/in/ahmadshamsii/"> <LinkedinOutlined /></Link>
+                    <Link target="_blank" href="https://www.instagram.com/ahmadshamsii/"> <InstagramOutlined /></Link>
+                    <Link href="mailto:ahmaddshamsii@gmail.com"> <MailOutlined /></Link>
+                    <Link rel="noopener noreferrer" target="_blank" href="/resume.pdf"> <FileTextOutlined /></Link>
                 </StyledText>
             </div>
 
@@ -80,7 +85,7 @@ const ContactForm: React.FC = () => {
                     <TextArea size="small" variant="borderless" style={{ borderBottom: "1px solid gray" }} rows={3} />
                 </Form.Item>
 
-                <Form.Item style={{ display: "flex", justifyContent: "end" }} label={null}>
+                <Form.Item style={{ display: "flex", justifyContent: "end", marginBottom: "0px" }} label={null}>
                     <StyledButton
                         type="text"
                         iconPosition="end"

@@ -43,13 +43,16 @@ const StyledNavItem = styled(Text) <{ selectedIndex: Number | null, index: Numbe
 `;
 
 
-const StyledContainer = styled(Col) <{ isDesktop: boolean }>`
-  position: relative;
+const StyledContainer = styled(Col) <{ isDesktop: boolean, isScrollingDown: boolean }>`
+  position: ${({ isDesktop }) => (isDesktop ? "relative" : "fixed")};
+  top: ${({ isScrollingDown, isDesktop }) => (isScrollingDown && !isDesktop ? "-80px" : "none")};  // Adjust 80px based on your header height
   border-right: ${({ isDesktop }) =>
     isDesktop ? "1px solid lightgray" : "none"};
   border-bottom: ${({ isDesktop }) =>
     isDesktop ? "none" : "1px solid lightgray"};
   min-height: ${({ isDesktop }) => (isDesktop ? "100vh" : "auto")};
+  transition: ${({ isDesktop }) => (isDesktop ? "none" : "top 0.25s ease-in-out")};
+z-index: 100;
 `;
 
 const ListItem = styled.li<{ selected: boolean }>`
