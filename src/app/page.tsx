@@ -62,7 +62,7 @@ const Home = () => {
 
       <Divider />
       <StyledText style={{ marginBottom: isSmallDesktop ? "30px" : "15px" }}>Contact</StyledText>
-      <ContactForm />
+      <ContactForm isContactPage={false} />
 
     </StyledContainer>
   );
