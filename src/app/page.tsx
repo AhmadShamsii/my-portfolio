@@ -22,14 +22,13 @@ export default function Index() {
 
   return (
     <StyledContainer>
-      <StyledText >Hello there, </StyledText>
+      <StyledText >Hello there,</StyledText>
       <StyledDesc>
         Ahmad Shamsi is a frontend developer focused on React and Next.js,
         crafting user-friendly, high-performance web apps. Previously, he worked
-        on various web development projects, honing his skills in modern
+        on various software development projects, honing his skills in modern
         frontend technologies. Moving forward, he aim to enhance his frontend
-        skills and work on even more projects. <br /> Based in Islamabad,
-        Pakistan.
+        skills and work on even more projects. <br /> Based in Islamabad, Pakistan.
       </StyledDesc>
       <Divider />
       <StyledText style={{ marginBottom: isSmallDesktop ? "30px" : "15px" }}>Projects</StyledText>
