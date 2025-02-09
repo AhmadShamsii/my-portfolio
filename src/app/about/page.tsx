@@ -8,7 +8,7 @@ const About = () => {
     <div style={{ marginTop: "2.5%", minHeight: "87vh" }}>
       <StyledTitle>About Me</StyledTitle>
       <StyledText>
-        Hey there! I’m an Electrical Engineering graduate who unexpectedly fell in love with coding after finishing college. My IT journey began with late-night study sessions and online courses, where I dived headfirst into the world of front-end development. After 7 months of persistence and lots of coffee, I landed my first job in tech – and there’s been no looking back since!
+        Hey there! I&#39;m an Electrical Engineering graduate who unexpectedly fell in love with coding after finishing college. My IT journey began with late-night study sessions and online courses, where I dived headfirst into the world of front-end development. After 7 months of persistence and lots of coffee, I landed my first job in tech – and there’s been no looking back since!
         <br />
         <br />
         <br />
