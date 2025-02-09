@@ -15,6 +15,7 @@ export const IPhoneX = styled.div`
     height: 220px;
     box-shadow: 0px 0px 0px 2px #1f1f1f, 0px 0px 0px 6px #191919,
     0px 0px 0px 2px #111;
+    margin-bottom: 45px;
             }
             @media ${tabletBreakpoint} {
               width: 140px;
@@ -172,6 +173,8 @@ export const StyledContainer = styled.div`
           margin: 0px;
           padding: 0px;
           background-color: #FAFAFC;
+          display: flex;
+          align-items: flex-start;
           
 
             @media ${desktopBreakpoint} {

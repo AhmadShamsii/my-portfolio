@@ -5,10 +5,10 @@ import { Divider, Space } from "antd";
 import styled from "styled-components";
 import "./../../app/global.css";
 import { colors } from "@/utils/colors";
-import { desktopBreakpoint } from "@/utils/constants";
+import { desktopBreakpoint, mobileBreakpoint } from "@/utils/constants";
 import { ListItem, StyledContainer, StyledLogo, StyledNavItem, StyledSocialItem } from "./styles";
 
-const List = styled.ul<{ isDesktop: boolean }>`
+const List = styled.ul<{ isDesktop: boolean, isMobile: boolean }>`
   position: fixed;
   padding-left: ${({ isDesktop }) => (isDesktop ? "0" : "3.78%")};
   list-style-type: none;
@@ -16,6 +16,8 @@ const List = styled.ul<{ isDesktop: boolean }>`
   align-items: ${({ isDesktop }) => (isDesktop ? "start" : "center")};
   margin: ${({ isDesktop }) => (isDesktop ? "3% 0 0 20px" : "0 0 0 0")};
   z-index: 10;
+  height: ${({ isMobile }) => (isMobile ? "30px" : "auto")};
+  padding-top: ${({ isMobile }) => (isMobile ? "4px" : "0")};
   background-color: ${({ isDesktop }) => (!isDesktop ? colors.lightergray : "none")}; 
   flex-direction: ${({ isDesktop }) => (isDesktop ? "column" : "row")};
   -webkit-box-shadow: ${({ isDesktop }) => (!isDesktop ? "0px 1px 10px 0px rgba(0,0,0,0.22)" : "none")};  
@@ -27,6 +29,7 @@ const NavBar = () => {
   const router = useRouter();
   const pathname = usePathname()
   const isDesktop = useMediaQuery({ query: desktopBreakpoint });
+  const isMobile = useMediaQuery({ query: mobileBreakpoint });
 
   const [isScrollingDown, setIsScrollingDown] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -82,7 +85,7 @@ const NavBar = () => {
 
   return (
     <StyledContainer isScrollingDown={isScrollingDown} isDesktop={isDesktop} span={isDesktop ? 4 : 24}>
-      <List isDesktop={isDesktop}>
+      <List isDesktop={isDesktop} isMobile={isMobile}>
         <div style={{ display: "flex", flexDirection: isDesktop ? "column" : "row", justifyContent: "space-between", alignItems: isDesktop ? "flex-start" : "center" }}>
           <StyledLogo style={{ color: pathname == "/" ? `${colors.mediumgray}` : `${colors.lightgray}` }} onClick={() => { router.push("/"); setSelectedIndex(null) }}>Ahmad Shamsi</StyledLogo>
           <div style={{ display: "flex", flexDirection: isDesktop ? "column" : "row", paddingRight: "3.78%", gap: "30px" }} >

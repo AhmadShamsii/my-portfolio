@@ -18,7 +18,7 @@ font-family: "Kanit";
     font-size: 2.5vw;
   }
   @media ${mobileBreakpoint} {
-    font-size: 3vw;
+    font-size: 4vw;
   }
 `;
 const StyledNavItem = styled(Text) <{ selectedIndex: Number | null, index: Number }>`
@@ -38,7 +38,7 @@ const StyledNavItem = styled(Text) <{ selectedIndex: Number | null, index: Numbe
     font-size: 2vw;
   }
   @media ${mobileBreakpoint} {
-    font-size: 3vw;
+    font-size: 3.5vw;
   }
 `;
 

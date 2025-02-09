@@ -62,23 +62,24 @@ const ProjectImage = () => {
             </VideoPlayer>
           </VideoWrapper>
         </IPhoneX>
-
-        {!isMobile && <Page>
-          <Titlebar>
-            <Dot className="close" />
-            <Dot className="minimise" />
-            <Dot className="maximise" />
-          </Titlebar>
-          <Image
-            style={{
-              width: "100%",
-              height: "100%",
-            }}
-            src={wordplayImg}
-            alt={"imageAltText"}
-          />{" "}
-        </Page>}
-        {showText && <BouncingScrollText>Scroll down for details! <ArrowDownOutlined /></BouncingScrollText>}
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "flex-end" }} >
+          {!isMobile && <Page>
+            <Titlebar>
+              <Dot className="close" />
+              <Dot className="minimise" />
+              <Dot className="maximise" />
+            </Titlebar>
+            <Image
+              style={{
+                width: "100%",
+                height: "100%",
+              }}
+              src={wordplayImg}
+              alt={"imageAltText"}
+            />{" "}
+          </Page>}
+          {showText && <BouncingScrollText>Scroll down for details! <ArrowDownOutlined /></BouncingScrollText>}
+        </div>
       </StyledContainer>
     </motion.div>
   );
