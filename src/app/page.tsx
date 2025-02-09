@@ -16,7 +16,7 @@ const StyledContainer = styled.div`
   color: ${colors.lightgray};
 `;
 
-const Home: React.FC = () => {
+export default function Index() {
   const isDesktop = useMediaQuery({ query: largeDesktopBreakpoint });
   const isSmallDesktop = useMediaQuery({ query: desktopBreakpoint });
 
@@ -67,5 +67,3 @@ const Home: React.FC = () => {
     </StyledContainer>
   );
 };
-
-export default Home;
