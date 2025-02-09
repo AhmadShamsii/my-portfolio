@@ -123,7 +123,7 @@ const ProjectDetails = () => {
           Game Features
         </StyledProjectTitle>
         <StyledProjectDesc style={{ margin: isMobile ? "50px 2vw" : "0 15%" }}>
-          User's stats and updated after every game. Each point consists of the
+          User&#39;s stats and updated after every game. Each point consists of the
           number of letters the typed word contains e:g if user enters dog for
           d, user will get 3 points for this word and so on. Leaderboards are
           also updated respectively.

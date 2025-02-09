@@ -56,9 +56,9 @@ const TexhnologiesCard = ({ technologies }: any) => {
       ref={ref}
     >
       <Col style={{ display: "flex", gap: "20px" }}>
-        {[...technologies, ...technologies]?.map((item: any) => (
+        {[...technologies, ...technologies]?.map((item: any, index: any) => (
           <StyledCard
-
+            key={index}
             hoverable
           >
             <>

@@ -16,7 +16,7 @@ const StyledContainer = styled.div`
   color: ${colors.lightgray};
 `;
 
-const Home = () => {
+const Home: React.FC = () => {
   const isDesktop = useMediaQuery({ query: largeDesktopBreakpoint });
   const isSmallDesktop = useMediaQuery({ query: desktopBreakpoint });
 

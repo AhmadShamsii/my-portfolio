@@ -32,7 +32,7 @@ const ContactForm: React.FC = ({ isContactPage = false }: any) => {
     return (
         <StyledContainer style={{ minHeight: isContactPage ? "87vh" : "auto", margin: isDesktop ? "50px 10vw 0 10vw" : "20px 2vw 20px 2vw" }}>
             <div style={{ marginTop: "2%" }}>
-                <StyledTitle>Let's Talk</StyledTitle>
+                <StyledTitle>Let&#39;s Talk</StyledTitle>
                 <StyledText style={{ color: "gray", marginBottom: isDesktop ? "20px" : "10px" }}>
                     I am based in <strong>Islamabad, Pakistan.</strong> <br />
                     You can contact me via form or mail me directly
