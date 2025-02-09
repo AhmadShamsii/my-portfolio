@@ -1,25 +1,27 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import {
+  ProjectProps,
+  ProjectVideo,
   StyledProjectDesc,
   StyledProjectDetails,
+  StyledProjectDetais,
   StyledProjectTitle,
 } from "../../../app/projects/styles";
-import { Col, Divider, Image, Row } from "antd";
+import { Col, Divider, Row } from "antd";
 import {
-  ArrowUpOutlined,
   GithubOutlined,
   InfoCircleOutlined,
   RocketTwoTone,
-  UserOutlined,
 } from "@ant-design/icons";
-
-import monstarzCollection from "./../../../../public/monstarzCollection.png";
-import monstarzAdmin from "./../../../../public/monstarz-admin.png";
+import { mobileBreakpoint } from "@/utils/constants";
+import { useMediaQuery } from "react-responsive";
 
 const ProjectDetails = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true }); // Only animate once when in view
+
+  const isMobile = useMediaQuery({ query: mobileBreakpoint });
 
   return (
     <motion.div
@@ -36,26 +38,26 @@ const ProjectDetails = () => {
           feeds and much more features.
         </StyledProjectDesc>
         <Divider />
-        <div>
+        <StyledProjectDetais>
           I got the opportunity to work on Youfirst while working with JMM Technologies.
           It is much more than a simple HRM software and includes much more features like
           Language Selection, Recruitment Management, Surveys, Reports and many other features.
-        </div>
+        </StyledProjectDetais>
         <Divider />
         <Row>
           <Col span={6}>
-            <div style={{ fontWeight: "bold" }}>Timeline</div>
-            <div>July - Jan 2025</div>
+            <ProjectProps style={{ fontWeight: "bold" }}>Timeline</ProjectProps>
+            <ProjectProps>July - Jan 2025</ProjectProps>
           </Col>
           <Col span={6}>
-            <div style={{ fontWeight: "bold" }}>Technologies</div>
-            <div>
+            <ProjectProps style={{ fontWeight: "bold" }}>Technologies</ProjectProps>
+            <ProjectProps>
               React <br /> GraphQl <br /> Ant Design <br /> TailwindCSS <br /> Zustand
-            </div>
+            </ProjectProps>
           </Col>
           <Col span={6}>
-            <div style={{ fontWeight: "bold" }}>Web services</div>
-            <div>
+            <ProjectProps style={{ fontWeight: "bold" }}>Web services</ProjectProps>
+            <ProjectProps>
               <a
                 style={{ color: "black" }}
                 href="https://apexcharts.com/"
@@ -96,40 +98,39 @@ const ProjectDetails = () => {
                 PDF.js
               </a>
               <br />
-            </div>
+            </ProjectProps>
           </Col>
           <Col span={6}>
-            <div style={{ fontWeight: "bold" }}>Links</div>
-            <a
+            <ProjectProps style={{ fontWeight: "bold" }}>Links</ProjectProps>
+            <ProjectProps> <a
               style={{ color: "black", marginRight: "5px" }}
               href="https://hrm.hrmtests.com/"
               target="_blank"
             >
               Test it Live!
             </a>
-            <RocketTwoTone />
-            <br />
-            <a
+              <RocketTwoTone /> </ProjectProps>
+            <ProjectProps> <a
               style={{ color: "black", marginRight: "5px" }}
               href="https://github.com/jmm-technologies/HRM-Frontend"
               target="_blank"
             >
               Github Repo
             </a>
-            <GithubOutlined />
+              <GithubOutlined /></ProjectProps >
           </Col>
         </Row>
       </StyledProjectDetails>
       <Divider />
-      <div style={{ textAlign: "center", marginTop: "100px" }}>
-        <StyledProjectTitle style={{ fontSize: "40px" }}>
+      <div style={{ textAlign: "center", marginTop: "50px" }}>
+        <StyledProjectTitle >
           Project Overview
           <InfoCircleOutlined
             style={{
-              fontSize: "35px",
+              fontSize: "70%",
               backgroundColor: "#ebebf2",
               borderRadius: "50%",
-              padding: "10px",
+              padding: "1.5%",
               marginLeft: "10px"
             }}
           />
@@ -137,18 +138,10 @@ const ProjectDetails = () => {
         <StyledProjectDesc>
           A quick demonstration of the project with showcasing some of its major features.
         </StyledProjectDesc>
-        <video
+        <ProjectVideo
           muted
           loop
           playsInline
-          style={{
-            borderRadius: "5px",
-            width: "70%",
-            height: "70%",
-            opacity: "0.75",
-            display: "block",
-            margin: "5% auto",
-          }}
           autoPlay
         >
           <source
@@ -156,8 +149,8 @@ const ProjectDetails = () => {
             type="video/mp4"
           />
           Your browser does not support the video tag.
-        </video>
-        <StyledProjectDesc style={{ margin: "0 15%" }}>
+        </ProjectVideo>
+        <StyledProjectDesc style={{ margin: isMobile ? "50px 2vw" : "0 15%" }}>
           User can add employees and assign permissions to each employee as per the user wants
           with this only the selected modules will be visible to the user and user can only add/update those
           modules as per the permission, more than this user can add departments, designations, reports, notices and
@@ -188,7 +181,6 @@ const ProjectDetails = () => {
           />
         </div>
       </div>
-      <Divider />
     </motion.div>
   );
 };

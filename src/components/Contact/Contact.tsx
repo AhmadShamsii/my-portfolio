@@ -51,7 +51,7 @@ const ContactForm: React.FC = ({ isContactPage = false }: any) => {
                 </StyledText>
             </div>
 
-            {isMobile && <Divider />}
+            {isMobile && <Divider style={{ margin: "0" }} />}
 
             <Form
                 form={form}

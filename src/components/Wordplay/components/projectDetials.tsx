@@ -1,8 +1,11 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import {
+  ProjectProps,
+  ProjectVideo,
   StyledProjectDesc,
   StyledProjectDetails,
+  StyledProjectDetais,
   StyledProjectTitle,
 } from "../../../app/projects/styles";
 import { Col, Divider, Row } from "antd";
@@ -10,11 +13,15 @@ import {
   GithubOutlined,
   RocketTwoTone,
 } from "@ant-design/icons";
+import { mobileBreakpoint } from "@/utils/constants";
+import { useMediaQuery } from "react-responsive";
 
 
 const ProjectDetails = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true }); // Only animate once when in view
+
+  const isMobile = useMediaQuery({ query: mobileBreakpoint });
 
   return (
     <motion.div
@@ -31,27 +38,27 @@ const ProjectDetails = () => {
           type a word of it.
         </StyledProjectDesc>
         <Divider />
-        <div>
+        <StyledProjectDetais>
           I developed this project to enhance my programming skills. This web
           games requires logic and a flow that i want to practice with this
           project. It includes user stats, leader boards and profile settings.
-        </div>
+        </StyledProjectDetais>
         <Divider />
         <Row>
           <Col span={6}>
-            <div style={{ fontWeight: "bold" }}>Timeline</div>
-            <div>Nov 2023 - Mar 2024</div>
+            <ProjectProps style={{ fontWeight: "bold" }}>Timeline</ProjectProps>
+            <ProjectProps>Nov 2023 - Mar 2024</ProjectProps>
           </Col>
           <Col span={6}>
-            <div style={{ fontWeight: "bold" }}>Technologies</div>
-            <div>
+            <ProjectProps style={{ fontWeight: "bold" }}>Technologies</ProjectProps>
+            <ProjectProps>
               React <br /> Firebase <br /> Typescript <br /> Ant Design <br />{" "}
               Styled Components
-            </div>
+            </ProjectProps>
           </Col>
           <Col span={6}>
-            <div style={{ fontWeight: "bold" }}>Web services</div>
-            <div>
+            <ProjectProps style={{ fontWeight: "bold" }}>Web services</ProjectProps>
+            <ProjectProps>
               <a
                 style={{ color: "black" }}
                 href="https://firebase.google.com/"
@@ -59,36 +66,35 @@ const ProjectDetails = () => {
               >
                 Firebase
               </a>
-            </div>
+            </ProjectProps>
           </Col>
           <Col span={6}>
-            <div style={{ fontWeight: "bold" }}>Links</div>
-            <a
+            <ProjectProps style={{ fontWeight: "bold" }}>Links</ProjectProps>
+            <ProjectProps> <a
               style={{ color: "black", marginRight: "5px" }}
               href="https://wordplay-five.vercel.app/"
               target="_blank"
             >
               Test it Live!
             </a>
-            <RocketTwoTone />
-            <br />
-            <a
+              <RocketTwoTone /> </ProjectProps>
+            <ProjectProps>  <a
               style={{ color: "black", marginRight: "5px" }}
               href="https://github.com/AhmadShamsii/wordplay"
               target="_blank"
             >
               Github Repo
             </a>
-            <GithubOutlined />
+              <GithubOutlined /> </ProjectProps>
           </Col>
         </Row>
       </StyledProjectDetails>
       <Divider />
-      <div style={{ textAlign: "center", marginTop: "100px" }}>
-        <StyledProjectTitle style={{ fontSize: "40px" }}>
+      <div style={{ textAlign: "center", marginTop: "50px" }}>
+        <StyledProjectTitle >
           Game Flow
         </StyledProjectTitle>
-        <StyledProjectDesc style={{ margin: "0 15%" }}>
+        <StyledProjectDesc style={{ margin: isMobile ? "50px 2vw" : "0 15%" }}>
           User can login by email, google or can continue as a guest and after
           login user can start the game. A random letter is shown to the user
           and user has a type a word starting from that letter in less than 5
@@ -96,17 +102,10 @@ const ProjectDetails = () => {
           already used word and user failing to type the word in 5 seconds
           resulting in the game over.
         </StyledProjectDesc>
-        <video
+        <ProjectVideo
           muted
           loop
           playsInline
-          style={{
-            borderRadius: "5px",
-            width: "70%",
-            height: "70%",
-            display: "block",
-            margin: "5% auto",
-          }}
           autoPlay
         >
           <source
@@ -114,32 +113,25 @@ const ProjectDetails = () => {
             type="video/mp4"
           />
           Your browser does not support the video tag.
-        </video>
+        </ProjectVideo>
       </div>
       <Divider />
       {/* ==================Game features=============== */}
 
-      <div style={{ textAlign: "center", marginTop: "100px" }}>
-        <StyledProjectTitle style={{ fontSize: "40px" }}>
+      <div style={{ textAlign: "center", marginTop: "50px" }}>
+        <StyledProjectTitle>
           Game Features
         </StyledProjectTitle>
-        <StyledProjectDesc style={{ margin: "0 15%" }}>
+        <StyledProjectDesc style={{ margin: isMobile ? "50px 2vw" : "0 15%" }}>
           User's stats and updated after every game. Each point consists of the
           number of letters the typed word contains e:g if user enters dog for
           d, user will get 3 points for this word and so on. Leaderboards are
           also updated respectively.
         </StyledProjectDesc>
-        <video
+        <ProjectVideo
           muted
           loop
           playsInline
-          style={{
-            borderRadius: "5px",
-            width: "70%",
-            height: "70%",
-            display: "block",
-            margin: "5% auto",
-          }}
           autoPlay
         >
           <source
@@ -147,9 +139,8 @@ const ProjectDetails = () => {
             type="video/mp4"
           />
           Your browser does not support the video tag.
-        </video>
+        </ProjectVideo>
       </div>
-      <Divider />
     </motion.div>
   );
 };

@@ -1,15 +1,33 @@
+import { desktopBreakpoint, largerDesktopBreakpoint, mobileBreakpoint, tabletBreakpoint } from "@/utils/constants";
 import styled from "styled-components";
 
 export const IPhoneX = styled.div`
   position: relative;
-  /* margin: 40px auto; */
-  width: 170px;
-  height: 300px;
   background-color: #7371ee;
   background-image: linear-gradient(60deg, #7371ee 1%, #a1d9d6 100%);
   border-radius: 20px;
   box-shadow: 0px 0px 0px 2px #1f1f1f, 0px 0px 0px 7px #191919,
     0px 0px 0px 2px #111;
+    width: 170px;
+    height: 300px;
+    @media ${largerDesktopBreakpoint} {
+      width: 120px;
+    height: 220px;
+    box-shadow: 0px 0px 0px 2px #1f1f1f, 0px 0px 0px 6px #191919,
+    0px 0px 0px 2px #111;
+            }
+            @media ${tabletBreakpoint} {
+              width: 140px;
+  height: 250px;
+  box-shadow: 0px 0px 0px 2px #1f1f1f, 0px 0px 0px 5px #191919,
+    0px 0px 0px 2px #111;
+            }
+            @media ${mobileBreakpoint} {
+              width: 190px;
+              height: 340px;
+              box-shadow: 0px 0px 0px 2px #1f1f1f, 0px 0px 0px 7px #191919,
+    0px 0px 0px 2px #111;
+            }
 
   &:before,
   &:after {
@@ -127,8 +145,54 @@ export const Page = styled.div`
   border-top-right-radius: 6px;
   overflow: hidden; /* To ensure the image doesn't overflow the container */
   width: 700px;
-  height: 400px;
-  margin-left: 50px;
+    height: 400px;
+    margin-left: 50px;
+
+  @media ${largerDesktopBreakpoint} {
+      width: 420px;
+    height: 220px;
+    margin-left: 20px;
+
+            }
+
+            @media ${tabletBreakpoint} {
+              width: 450px;
+              height: 250px;
+    margin-left: 0px;
+
+            }
+            @media ${mobileBreakpoint} {
+              width: 300px;
+              height: 170px;
+    margin-left: 0px;
+            }
+`;
+export const StyledContainer = styled.div`
+  min-height: 94vh;
+          margin: 0px;
+          padding: 0px;
+          background-color: #FAFAFC;
+          
+
+            @media ${desktopBreakpoint} {
+              display: flex;
+          align-items: center;
+          justify-content: center;
+            }
+            @media ${tabletBreakpoint} {
+              display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          gap: 20px
+            }
+            @media ${mobileBreakpoint} {
+              display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          gap: 20px
+            }
 `;
 
 export const Titlebar = styled.div`

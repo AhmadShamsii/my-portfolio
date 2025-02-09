@@ -1,8 +1,11 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import {
+  ProjectProps,
+  ProjectVideo,
   StyledProjectDesc,
   StyledProjectDetails,
+  StyledProjectDetais,
   StyledProjectTitle,
 } from "../../../app/projects/styles";
 import { Col, Divider, Row } from "antd";
@@ -11,6 +14,8 @@ import {
   InfoCircleOutlined,
   RocketTwoTone,
 } from "@ant-design/icons";
+import { useMediaQuery } from "react-responsive";
+import { mobileBreakpoint } from "@/utils/constants";
 
 const ProjectDetails = () => {
   const ref = useRef(null);
@@ -30,54 +35,53 @@ const ProjectDetails = () => {
           Travelo is a tour managining agency site with a fascinating landing page
         </StyledProjectDesc>
         <Divider />
-        <div>
+        <StyledProjectDetais>
           I code along this while learning Nextjs from youtube. This is for learning and to get my hands
           dirty with Nextjs and all of its concepts to play along with the things it provides.
-        </div>
+        </StyledProjectDetais>
         <Divider />
         <Row>
           <Col span={6}>
-            <div style={{ fontWeight: "bold" }}>Timeline</div>
-            <div>Sept 2023 - Oct 2023</div>
+            <ProjectProps style={{ fontWeight: "bold" }}>Timeline</ProjectProps>
+            <ProjectProps>Sept 2023 - Oct 2023</ProjectProps>
           </Col>
           <Col span={6}>
-            <div style={{ fontWeight: "bold" }}>Technologies</div>
-            <div>
+            <ProjectProps style={{ fontWeight: "bold" }}>Technologies</ProjectProps>
+            <ProjectProps>
               NextJS <br /> Tpescript <br />
-            </div>
+            </ProjectProps>
           </Col>
           <Col span={6}>
-            <div style={{ fontWeight: "bold" }}>Links</div>
-            <a
+            <ProjectProps style={{ fontWeight: "bold" }}>Links</ProjectProps>
+            <ProjectProps>   <a
               style={{ color: "black", marginRight: "5px" }}
               href="https://travelo-azure.vercel.app/"
               target="_blank"
             >
               Test it Live!
             </a>
-            <RocketTwoTone />
-            <br />
-            <a
+              <RocketTwoTone /> </ProjectProps>
+            <ProjectProps> <a
               style={{ color: "black", marginRight: "5px" }}
               href="https://github.com/AhmadShamsii/Travelo"
               target="_blank"
             >
               Github Repo!
             </a>
-            <GithubOutlined />
+              <GithubOutlined /> </ProjectProps>
           </Col>
         </Row>
       </StyledProjectDetails>
       <Divider />
-      <div style={{ textAlign: "center", marginTop: "100px" }}>
-        <StyledProjectTitle style={{ fontSize: "40px" }}>
+      <div style={{ textAlign: "center", marginTop: "50px" }}>
+        <StyledProjectTitle >
           Project Overview
           <InfoCircleOutlined
             style={{
-              fontSize: "35px",
+              fontSize: "70%",
               backgroundColor: "#ebebf2",
               borderRadius: "50%",
-              padding: "10px",
+              padding: "1.5%",
               marginLeft: "10px"
             }}
           />
@@ -85,18 +89,10 @@ const ProjectDetails = () => {
         <StyledProjectDesc>
           A quick demonstration of the project
         </StyledProjectDesc>
-        <video
+        <ProjectVideo
           muted
           loop
           playsInline
-          style={{
-            borderRadius: "5px",
-            width: "70%",
-            height: "70%",
-            opacity: "0.75",
-            display: "block",
-            margin: "5% auto",
-          }}
           autoPlay
         >
           <source
@@ -104,7 +100,7 @@ const ProjectDetails = () => {
             type="video/mp4"
           />
           Your browser does not support the video tag.
-        </video>
+        </ProjectVideo>
       </div>
     </motion.div>
   );

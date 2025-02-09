@@ -4,13 +4,39 @@ import {
   Dot,
   IPhoneX,
   Page,
+  StyledContainer,
   Titlebar,
   VideoPlayer,
   VideoWrapper,
 } from "../styles";
 import wordplayImg from "./../../../../public/wordplay-desktop.png";
+import { BouncingScrollText } from "@/app/projects/styles";
+import { ArrowDownOutlined } from "@ant-design/icons";
+import { useEffect, useState } from "react";
+import { mobileBreakpoint } from "@/utils/constants";
+import { useMediaQuery } from "react-responsive";
 
 const ProjectImage = () => {
+  const isMobile = useMediaQuery({ query: mobileBreakpoint });
+
+  const [showText, setShowText] = useState(true);  // Local state to control visibility of the text
+
+  // Scroll event handler
+  const handleScroll = () => {
+    if (window.scrollY > 70 && showText) { // User has scrolled more than 50px
+      setShowText(false); // Hide the text when the user scrolls down
+    }
+  };
+
+  // Add scroll event listener
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [showText]);  // Only re-run the effect when showText changes
   return (
     <motion.div
       className="w-32 h-32 bg-blue-500 rounded-full"
@@ -22,16 +48,7 @@ const ProjectImage = () => {
         repeatType: "mirror",
       }}
     >
-      <div
-        style={{
-          minHeight: "96vh",
-          margin: "0px",
-          padding: "0px",
-          backgroundColor: "#FAFAFC",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
+      <StyledContainer
       >
         <IPhoneX>
           <i>Speaker</i>
@@ -46,7 +63,7 @@ const ProjectImage = () => {
           </VideoWrapper>
         </IPhoneX>
 
-        <Page>
+        {!isMobile && <Page>
           <Titlebar>
             <Dot className="close" />
             <Dot className="minimise" />
@@ -60,8 +77,9 @@ const ProjectImage = () => {
             src={wordplayImg}
             alt={"imageAltText"}
           />{" "}
-        </Page>
-      </div>
+        </Page>}
+        {showText && <BouncingScrollText>Scroll down for details! <ArrowDownOutlined /></BouncingScrollText>}
+      </StyledContainer>
     </motion.div>
   );
 };

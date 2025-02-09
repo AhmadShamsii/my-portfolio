@@ -259,6 +259,7 @@ export const cardData: ProjectData[] = [
 export const FAST_SCROLL = 20;
 export const SLOW_SCROLL = 35;
 
+export const largerDesktopBreakpoint = "(max-width: 1245px) and (min-width: 800px)"
 export const largeDesktopBreakpoint = "(min-width: 1000px)"
 export const desktopBreakpoint = "(min-width: 800px)"
 export const tabletBreakpoint = "(min-width: 500px) and (max-width: 800px)"

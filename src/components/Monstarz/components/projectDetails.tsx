@@ -1,8 +1,11 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import {
+  ProjectProps,
+  ProjectVideo,
   StyledProjectDesc,
   StyledProjectDetails,
+  StyledProjectDetais,
   StyledProjectTitle,
 } from "../../../app/projects/styles";
 import { Col, Divider, Image, Row } from "antd";
@@ -15,10 +18,14 @@ import {
 
 import monstarzCollection from "./../../../../public/monstarzCollection.png";
 import monstarzAdmin from "./../../../../public/monstarz-admin.png";
+import { mobileBreakpoint } from "@/utils/constants";
+import { useMediaQuery } from "react-responsive";
 
 const ProjectDetails = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true }); // Only animate once when in view
+
+  const isMobile = useMediaQuery({ query: mobileBreakpoint });
 
   return (
     <motion.div
@@ -35,26 +42,26 @@ const ProjectDetails = () => {
           robots and more along with admin dashboard.
         </StyledProjectDesc>
         <Divider />
-        <div>
+        <StyledProjectDetais>
           It was a learning project that i designed and developed all by myself
           while learning React. It contains a complete e-commerce flow with
           additional admin dashboard to manage products, customers and orders.
-        </div>
+        </StyledProjectDetais>
         <Divider />
         <Row>
           <Col span={6}>
-            <div style={{ fontWeight: "bold" }}>Timeline</div>
-            <div>May - Sept 2024</div>
+            <ProjectProps style={{ fontWeight: "bold" }}>Timeline</ProjectProps>
+            <ProjectProps>May - Sept 2024</ProjectProps>
           </Col>
           <Col span={6}>
-            <div style={{ fontWeight: "bold" }}>Technologies</div>
-            <div>
+            <ProjectProps style={{ fontWeight: "bold" }}>Technologies</ProjectProps>
+            <ProjectProps>
               React <br /> Typescript <br /> Ant Design <br /> Styled Components
-            </div>
+            </ProjectProps>
           </Col>
           <Col span={6}>
-            <div style={{ fontWeight: "bold" }}>Web services</div>
-            <div>
+            <ProjectProps style={{ fontWeight: "bold" }}>Web services</ProjectProps>
+            <ProjectProps>
               <a
                 style={{ color: "black" }}
                 href="https://robohash.org/"
@@ -87,40 +94,40 @@ const ProjectDetails = () => {
                 SheetJS
               </a>
               <br />
-            </div>
+            </ProjectProps>
           </Col>
           <Col span={6}>
-            <div style={{ fontWeight: "bold" }}>Links</div>
-            <a
+            <ProjectProps style={{ fontWeight: "bold" }}>Links</ProjectProps>
+            <ProjectProps>   <a
               style={{ color: "black", marginRight: "5px" }}
               href="https://monstarz.vercel.app/"
               target="_blank"
             >
               Test it Live!
             </a>
-            <RocketTwoTone />
-            <br />
-            <a
+              <RocketTwoTone /> </ProjectProps>
+            <ProjectProps>   <a
               style={{ color: "black", marginRight: "5px" }}
               href="https://github.com/AhmadShamsii/Monstarz/"
               target="_blank"
             >
               Github Repo
             </a>
-            <GithubOutlined />
+              <GithubOutlined /> </ProjectProps>
           </Col>
         </Row>
       </StyledProjectDetails>
       <Divider />
-      <div style={{ textAlign: "center", marginTop: "100px" }}>
-        <StyledProjectTitle style={{ fontSize: "40px" }}>
-          User Side{" "}
+      <div style={{ textAlign: "center", marginTop: "50px" }}>
+        <StyledProjectTitle>
+          User Side
           <UserOutlined
             style={{
-              fontSize: "30px",
+              fontSize: "70%",
               backgroundColor: "#ebebf2",
               borderRadius: "50%",
-              padding: "10px",
+              padding: "1.5%",
+              marginLeft: "10px"
             }}
           />
         </StyledProjectTitle>
@@ -128,18 +135,10 @@ const ProjectDetails = () => {
           User can add characters to favourites and in cart to proceed to
           checkout and view the receipt
         </StyledProjectDesc>
-        <video
+        <ProjectVideo
           muted
           loop
           playsInline
-          style={{
-            borderRadius: "5px",
-            width: "70%",
-            height: "70%",
-            opacity: "0.75",
-            display: "block",
-            margin: "5% auto",
-          }}
           autoPlay
         >
           <source
@@ -147,8 +146,8 @@ const ProjectDetails = () => {
             type="video/mp4"
           />
           Your browser does not support the video tag.
-        </video>
-        <StyledProjectDesc style={{ margin: "0 15%" }}>
+        </ProjectVideo>
+        <StyledProjectDesc style={{ margin: isMobile ? "50px 2vw" : "0 15%" }}>
           There are a total of five categries of characters i-e Monstars,
           Robots, Avatars and RoboHeads from which a user can pick to buy. User
           can also add a character to favourite to save it for later. After the
@@ -165,15 +164,16 @@ const ProjectDetails = () => {
       <Divider />
       {/* ==================Admin side=============== */}
 
-      <div style={{ textAlign: "center", marginTop: "100px" }}>
-        <StyledProjectTitle style={{ fontSize: "40px" }}>
+      <div style={{ textAlign: "center", marginTop: "50px" }}>
+        <StyledProjectTitle>
           Admin Side{" "}
           <UserOutlined
             style={{
-              fontSize: "30px",
-              backgroundColor: "#d6d6e0",
+              fontSize: "70%",
+              backgroundColor: "#ebebf2",
               borderRadius: "50%",
-              padding: "10px",
+              padding: "1.5%",
+              marginLeft: "10px"
             }}
           />
         </StyledProjectTitle>
@@ -181,18 +181,10 @@ const ProjectDetails = () => {
           Admin can manage customers, products. orders and order details of any
           specific order
         </StyledProjectDesc>
-        <video
+        <ProjectVideo
           muted
           loop
           playsInline
-          style={{
-            borderRadius: "5px",
-            width: "70%",
-            height: "70%",
-            opacity: "0.75",
-            display: "block",
-            margin: "5% auto",
-          }}
           autoPlay
         >
           <source
@@ -200,8 +192,8 @@ const ProjectDetails = () => {
             type="video/mp4"
           />
           Your browser does not support the video tag.
-        </video>
-        <StyledProjectDesc style={{ margin: "0 15%" }}>
+        </ProjectVideo>
+        <StyledProjectDesc style={{ margin: isMobile ? "50px 2vw" : "0 15%" }}>
           In the dashboard admin can see the total sales, average value of an
           order, total orders and sales analytics by order price and by
           category. Admin can also manage all of the characters and add a new
@@ -218,7 +210,6 @@ const ProjectDetails = () => {
           />
         </div>
       </div>
-      <Divider />
     </motion.div>
   );
 };
