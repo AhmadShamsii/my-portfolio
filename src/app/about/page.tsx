@@ -16,7 +16,7 @@ const About = () => {
         <br />
         <br />
         <br />
-        I’m constantly learning and trying new things, whether it's exploring a new coding framework, building something cool, or testing my strategic skills on the chessboard. Life’s a journey, and I’m here for all the adventures, challenges, and late-night coding bugs it throws my way!
+        I&#39;m constantly learning and trying new things, whether it's exploring a new coding framework, building something cool, or testing my strategic skills on the chessboard. Life’s a journey, and I’m here for all the adventures, challenges, and late-night coding bugs it throws my way!
         <br />
         <br />
         <br />
