@@ -32,7 +32,7 @@ const Experience = () => {
         <Steps
             style={{ width: isDesktop ? "70vw" : "100%", paddingLeft: isDesktop ? "10vw" : "0vw", margin: isDesktop ? "0vw" : "0 2vw" }}
             progressDot
-            current={null}
+            current={-1}
             direction="vertical"
             items={[
                 {
