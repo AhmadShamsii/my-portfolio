@@ -8,7 +8,12 @@ import { largeDesktopBreakpoint, mobileBreakpoint } from "@/utils/constants";
 import { useMediaQuery } from "react-responsive";
 import Link from "next/link";
 
-const ContactForm: React.FC = ({ isContactPage = false }: any) => {
+// Define the props type
+interface ContactFormProps {
+    isContactPage: boolean;
+}
+
+const ContactForm: React.FC<ContactFormProps> = ({ isContactPage = false }: any) => {
     const isDesktop = useMediaQuery({ query: largeDesktopBreakpoint });
     const isMobile = useMediaQuery({ query: mobileBreakpoint });
 
