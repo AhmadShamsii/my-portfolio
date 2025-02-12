@@ -1,7 +1,7 @@
 import { Badge, Space, Steps, Typography } from 'antd';
 import React, { useRef } from 'react';
 import { StyledSpace, StyledText, StyledTitle, StyledTitle2 } from './styles';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { desktopBreakpoint, largeDesktopBreakpoint } from '@/utils/constants';
 import { useMediaQuery } from 'react-responsive';
 
@@ -13,20 +13,22 @@ const Experience = () => {
 
     const ref1 = useRef(null);
     const ref2 = useRef(null);
+    const isInView1 = useInView(ref1, { once: true }); // Only animate once when in view
+    const isInView2 = useInView(ref2, { once: true }); // Only animate once when in view
 
-    const { scrollYProgress: scrollYProgress1 } = useScroll({
-        target: ref1,
-        offset: ["0.5 1", "1.33 1"],
-    });
+    // const { scrollYProgress: scrollYProgress1 } = useScroll({
+    //     target: ref1,
+    //     offset: ["0.5 1", "1.33 1"],
+    // });
 
-    const { scrollYProgress: scrollYProgress2 } = useScroll({
-        target: ref2,
-        offset: ["0.5 1", "1.33 1"],
-    });
+    // const { scrollYProgress: scrollYProgress2 } = useScroll({
+    //     target: ref2,
+    //     offset: ["0.5 1", "1.33 1"],
+    // });
 
 
-    const scaleProgress1 = useTransform(scrollYProgress1, [0, 1], [0.9, 1]);
-    const scaleProgress2 = useTransform(scrollYProgress2, [0, 1], [0.9, 1]);
+    // const scaleProgress1 = useTransform(scrollYProgress1, [0, 1], [0.9, 1]);
+    // const scaleProgress2 = useTransform(scrollYProgress2, [0, 1], [0.9, 1]);
 
     return (
         <Steps
@@ -39,10 +41,10 @@ const Experience = () => {
                     title: (
                         <motion.div
                             ref={ref1}
-                            style={{
-                                scale: scaleProgress1,
-                                opacity: scrollYProgress1,
-                            }}
+                            initial={{ opacity: 0, y: 50 }} // Start off-screen and transparent
+                            animate={isInView1 ? { opacity: 1, y: 0 } : {}} // Fade in and slide up when in view
+                            transition={{ duration: 0.8 }}
+                            className="w-32 h-32 bg-blue-500 rounded-lg"
                         >
                             <StyledSpace style={{ width: isDesktop ? "50vw" : "70vw" }}>
                                 <Space style={{ rowGap: "0px" }} direction='vertical'>
@@ -58,10 +60,10 @@ const Experience = () => {
                     ),
                     description: (
                         <motion.div
-                            style={{
-                                scale: scaleProgress1,
-                                opacity: scrollYProgress1,
-                            }}
+                        initial={{ opacity: 0, y: 50 }} // Start off-screen and transparent
+                        animate={isInView1 ? { opacity: 1, y: 0 } : {}} // Fade in and slide up when in view
+                        transition={{ duration: 0.8 }}
+                        className="w-32 h-32 bg-blue-500 rounded-lg"
                         >
                             <StyledText style={{ width: isDesktop ? "50vw" : "70vw", marginTop: "20px", rowGap: "20px", display: "flex", flexDirection: "column", marginBottom: "20px" }}>
                                 <Space>
@@ -86,11 +88,11 @@ const Experience = () => {
                 {
                     title: (
                         <motion.div
-                            ref={ref2}
-                            style={{
-                                scale: scaleProgress2,
-                                opacity: scrollYProgress2,
-                            }}
+                        ref={ref2}
+                        initial={{ opacity: 0, y: 50 }} // Start off-screen and transparent
+                        animate={isInView2 ? { opacity: 1, y: 0 } : {}} // Fade in and slide up when in view
+                        transition={{ duration: 0.8 }}
+                        className="w-32 h-32 bg-blue-500 rounded-lg"
                         >
                             <StyledSpace style={{ width: isDesktop ? "50vw" : "70vw" }}>
                                 <Space style={{ rowGap: "0px" }} direction='vertical'>
@@ -106,10 +108,10 @@ const Experience = () => {
                     ),
                     description: (
                         <motion.div
-                            style={{
-                                scale: scaleProgress2,
-                                opacity: scrollYProgress2,
-                            }}
+                        initial={{ opacity: 0, y: 50 }} // Start off-screen and transparent
+                        animate={isInView2 ? { opacity: 1, y: 0 } : {}} // Fade in and slide up when in view
+                        transition={{ duration: 0.8 }}
+                        className="w-32 h-32 bg-blue-500 rounded-lg"
                         >
                             <StyledText style={{ width: isDesktop ? "50vw" : "70vw", marginTop: "20px", rowGap: "20px", display: "flex", flexDirection: "column" }}>
                                 <Space>

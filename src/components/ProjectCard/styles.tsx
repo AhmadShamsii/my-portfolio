@@ -14,7 +14,7 @@ const StyledCard = styled(Card) <{ isSmallDesktop: boolean }>`
   flex-direction: column;
 
   .ant-card-body {
-    padding: ${({ isSmallDesktop }) => (isSmallDesktop ? "24px" : "12px")};
+    padding: ${({ isSmallDesktop }) => (isSmallDesktop ? "24px" : "8px")};
   }
   .card-title {
     position: relative;
