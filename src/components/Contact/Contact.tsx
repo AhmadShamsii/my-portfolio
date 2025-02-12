@@ -36,7 +36,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isContactPage = false }: any)
 
     return (
         <StyledContainer style={{ minHeight: isContactPage ? "87vh" : "auto", margin: isDesktop ? "50px 10vw 0 10vw" : "20px 2vw 20px 2vw" }}>
-            <div style={{ marginTop: "2%" }}>
+            <div style={{ marginTop: "2%", height:"0px"}}>
                 <StyledTitle>Let&#39;s Talk</StyledTitle>
                 <StyledText style={{ color: "gray", marginBottom: isDesktop ? "20px" : "10px" }}>
                     I am based in <strong>Islamabad, Pakistan.</strong> <br />
@@ -55,8 +55,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ isContactPage = false }: any)
                     <Link rel="noopener noreferrer" target="_blank" href="/resume.pdf"> <FileTextOutlined /></Link>
                 </StyledText>
             </div>
-
-            {isMobile && <Divider style={{ margin: "0" }} />}
 
             <Form
                 form={form}
