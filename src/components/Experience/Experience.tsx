@@ -32,7 +32,7 @@ const Experience = () => {
                             transition={{ duration: 0.8 }}
                             className="w-32 h-32 bg-blue-500 rounded-lg"
                         >
-                            <StyledSpace style={{ width: isDesktop ? "50vw" : "70vw" }}>
+                            <StyledSpace style={{ width: isDesktop ? "50vw" : "80vw" }}>
                                 <Space style={{ rowGap: "0px" }} direction='vertical'>
                                     <StyledTitle>14 DIGITAL</StyledTitle>
                                     <StyledTitle2>Software Engineer</StyledTitle2>
@@ -51,7 +51,7 @@ const Experience = () => {
                             transition={{ duration: 0.8 }}
                             className="w-32 h-32 bg-blue-500 rounded-lg"
                         >
-                            <StyledText style={{ width: isDesktop ? "50vw" : "70vw", marginTop: "20px", rowGap: "20px", display: "flex", flexDirection: "column", marginBottom: "20px" }}>
+                            <StyledText style={{ width: isDesktop ? "50vw" : "80vw", marginTop: "20px", rowGap: "20px", display: "flex", flexDirection: "column", marginBottom: "20px",textAlign:"left" }}>
                                 <Space>
                                     <Badge style={{ marginRight: "10px" }} status="default" />
                                     Developed and enhanced a digital care management platform using Vue.js and Bootstrap, enabling real-time
@@ -80,7 +80,7 @@ const Experience = () => {
                             transition={{ duration: 0.8 }}
                             className="w-32 h-32 bg-blue-500 rounded-lg"
                         >
-                            <StyledSpace style={{ width: isDesktop ? "50vw" : "70vw" }}>
+                            <StyledSpace style={{ width: isDesktop ? "50vw" : "80vw" }}>
                                 <Space style={{ rowGap: "0px" }} direction='vertical'>
                                     <StyledTitle>JMM TECHNOLOGIES</StyledTitle>
                                     <StyledTitle2>Software Engineer (ReactJS)</StyledTitle2>
@@ -99,7 +99,7 @@ const Experience = () => {
                             transition={{ duration: 0.8 }}
                             className="w-32 h-32 bg-blue-500 rounded-lg"
                         >
-                            <StyledText style={{ width: isDesktop ? "50vw" : "70vw", marginTop: "20px", rowGap: "20px", display: "flex", flexDirection: "column", marginBottom: "20px" }}>
+                            <StyledText style={{ width: isDesktop ? "50vw" : "80vw", marginTop: "20px", rowGap: "20px", display: "flex", flexDirection: "column", marginBottom: "20px",textAlign:"left" }}>
                                 <Space>
                                     <Badge style={{ marginRight: "10px" }} status="default" />
                                     Developed and maintained HRM software using ReactJS and GraphQL, improving the efficiency of employee
@@ -128,7 +128,7 @@ const Experience = () => {
                             transition={{ duration: 0.8 }}
                             className="w-32 h-32 bg-blue-500 rounded-lg"
                         >
-                            <StyledSpace style={{ width: isDesktop ? "50vw" : "70vw" }}>
+                            <StyledSpace style={{ width: isDesktop ? "50vw" : "80vw" }}>
                                 <Space style={{ rowGap: "0px" }} direction='vertical'>
                                     <StyledTitle>SMART FORUM</StyledTitle>
                                     <StyledTitle2>Junior Software Engineer</StyledTitle2>
@@ -147,7 +147,7 @@ const Experience = () => {
                             transition={{ duration: 0.8 }}
                             className="w-32 h-32 bg-blue-500 rounded-lg"
                         >
-                            <StyledText style={{ width: isDesktop ? "50vw" : "70vw", marginTop: "20px", rowGap: "20px", display: "flex", flexDirection: "column" }}>
+                            <StyledText style={{ width: isDesktop ? "50vw" : "80vw", marginTop: "20px", rowGap: "20px", display: "flex", flexDirection: "column", textAlign:"left" }}>
                                 <Space>
                                     <Badge style={{ marginRight: "10px" }} status="default" />
                                     Worked with Qualcomm development team and developed a project management tool for Qualcomm using React and
