@@ -6,6 +6,7 @@ import { useMediaQuery } from "react-responsive";
 import { Row } from "antd";
 import { useEffect, useState } from "react";
 import { desktopBreakpoint } from "@/utils/constants";
+
 export default function RootLayout({
   children,
 }: {

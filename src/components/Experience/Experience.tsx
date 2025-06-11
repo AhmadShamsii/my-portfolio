@@ -1,3 +1,4 @@
+"use client"
 import { Badge, Space, Steps, Typography } from 'antd';
 import React, { useRef } from 'react';
 import { StyledSpace, StyledText, StyledTitle, StyledTitle2 } from './styles';

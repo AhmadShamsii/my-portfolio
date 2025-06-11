@@ -1,8 +1,6 @@
-// ProjectCard.tsx
+"use client"
 import Image from "next/image";
 import { StyledCard, StyledDescription, StyledYear } from "./styles";
-import { Flex, Tag } from "antd";
-import { colors } from "@/utils/colors";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import React from "react";

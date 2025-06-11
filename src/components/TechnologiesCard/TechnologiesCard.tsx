@@ -1,3 +1,4 @@
+"use client"
 import { Col } from "antd";
 import Image from "next/image";
 import { colors } from "@/utils/colors";
