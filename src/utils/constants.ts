@@ -1,15 +1,18 @@
 import reactLogo from './../../public/reactlogo.svg';
 import nextjslogo from './../../public/nextjslogo.svg';
+import vuejslogo from './../../public/vuejslogo.svg';
 import typescriptlogo from './../../public/typescriptlogo.svg';
 import javascriptlogo from './../../public/javascriptlogo.svg';
 import antdlogo from './../../public/antdlogo.svg';
 import muilogo from './../../public/muilogo.svg';
 import tailwindcsslogo from './../../public/tailwindcsslogo.svg';
+import bootstraplogo from './../../public/bootstraplogo.svg';
 import csslogo from './../../public/csslogo.svg';
 import htmllogo from './../../public/htmllogo.svg';
 import framermotionlogo from './../../public/framermotionlogo.svg';
 import monstarzImg from './../../public/monstarzImg.png';
 import youfirst from './../../public/youfirst.png';
+import assistedLives from './../../public/assistedLives.png';
 import zonebit from './../../public/zonebit.png';
 import wordplay from './../../public/wordplay.png';
 import nexters from './../../public/nexters.png';
@@ -119,6 +122,10 @@ export const technlogies = [
     technology: 'Nextjs',
   },
   {
+    logo: vuejslogo,
+    technology: 'Vuejs',
+  },
+  {
     logo: typescriptlogo,
     technology: 'Typescript',
   },
@@ -141,6 +148,10 @@ export const technlogies = [
   {
     logo: tailwindcsslogo,
     technology: 'Tailwind',
+  },
+  {
+    logo: bootstraplogo,
+    technology: 'Bootstrap',
   },
   {
     logo: csslogo,
@@ -166,6 +177,17 @@ export interface ProjectData {
 
 
 export const cardData: ProjectData[] = [
+    {
+    id: 9,
+    imageSrc: assistedLives,
+    imageAltText: "project 2 | Assisted Lives",
+    projectTitle: "Assisted Lives",
+    projectDesc: "A digital care management platform",
+    projectYear: "2025",
+    tags: ["EHR", "Medical"],
+    span: 12,
+    category: "Collaborative Projects",
+  },
   {
     id: 1,
     imageSrc: youfirst,

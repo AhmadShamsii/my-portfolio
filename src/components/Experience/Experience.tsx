@@ -15,21 +15,6 @@ const Experience = () => {
     const ref2 = useRef(null);
     const isInView1 = useInView(ref1, { once: true }); // Only animate once when in view
     const isInView2 = useInView(ref2, { once: true }); // Only animate once when in view
-
-    // const { scrollYProgress: scrollYProgress1 } = useScroll({
-    //     target: ref1,
-    //     offset: ["0.5 1", "1.33 1"],
-    // });
-
-    // const { scrollYProgress: scrollYProgress2 } = useScroll({
-    //     target: ref2,
-    //     offset: ["0.5 1", "1.33 1"],
-    // });
-
-
-    // const scaleProgress1 = useTransform(scrollYProgress1, [0, 1], [0.9, 1]);
-    // const scaleProgress2 = useTransform(scrollYProgress2, [0, 1], [0.9, 1]);
-
     return (
         <Steps
             style={{ width: isDesktop ? "70vw" : "100%", paddingLeft: isDesktop ? "10vw" : "0vw", margin: isDesktop ? "0vw" : "0 2vw" }}
@@ -48,22 +33,70 @@ const Experience = () => {
                         >
                             <StyledSpace style={{ width: isDesktop ? "50vw" : "70vw" }}>
                                 <Space style={{ rowGap: "0px" }} direction='vertical'>
-                                    <StyledTitle>JMM TECHNOLOGIES</StyledTitle>
-                                    <StyledTitle2>Software Engineer (ReactJS)</StyledTitle2>
+                                    <StyledTitle>14 DIGITAL</StyledTitle>
+                                    <StyledTitle2>Software Engineer</StyledTitle2>
                                 </Space>
                                 <Space style={{ rowGap: "0px" }} direction='vertical'>
-                                    <StyledText >Remote</StyledText>
-                                    <StyledText >July 2024 - Present</StyledText>
+                                    <StyledText>Birmingham, UK (Rmote)</StyledText>
+                                    <StyledText>Feb 2025 - Present</StyledText>
                                 </Space>
                             </StyledSpace>
                         </motion.div>
                     ),
                     description: (
                         <motion.div
-                        initial={{ opacity: 0, y: 50 }} // Start off-screen and transparent
-                        animate={isInView1 ? { opacity: 1, y: 0 } : {}} // Fade in and slide up when in view
-                        transition={{ duration: 0.8 }}
-                        className="w-32 h-32 bg-blue-500 rounded-lg"
+                            initial={{ opacity: 0, y: 50 }} // Start off-screen and transparent
+                            animate={isInView1 ? { opacity: 1, y: 0 } : {}} // Fade in and slide up when in view
+                            transition={{ duration: 0.8 }}
+                            className="w-32 h-32 bg-blue-500 rounded-lg"
+                        >
+                            <StyledText style={{ width: isDesktop ? "50vw" : "70vw", marginTop: "20px", rowGap: "20px", display: "flex", flexDirection: "column", marginBottom: "20px" }}>
+                                <Space>
+                                    <Badge style={{ marginRight: "10px" }} status="default" />
+                                    Developed and enhanced a digital care management platform using Vue.js and Bootstrap, enabling real-time
+                                    caregiver monitoring, task tracking, and medication logging.
+                                </Space>
+                                <Space>
+                                    <Badge style={{ marginRight: "10px" }} status="default" />
+                                    Created responsive, modular UI components and implemented dynamic scheduling and automated assessment
+                                    workflows, improving user experience and operational efficiency.
+                                </Space>
+                                <Space>
+                                    <Badge style={{ marginRight: "10px" }} status="default" />
+                                    Collaborated in agile teams to ensure scalable front-end architecture, secure role-based access, and compliance with
+                                    healthcare data standards.
+                                </Space>
+                            </StyledText>
+                        </motion.div>
+                    ),
+                },
+                {
+                    title: (
+                        <motion.div
+                            ref={ref1}
+                            initial={{ opacity: 0, y: 50 }} // Start off-screen and transparent
+                            animate={isInView1 ? { opacity: 1, y: 0 } : {}} // Fade in and slide up when in view
+                            transition={{ duration: 0.8 }}
+                            className="w-32 h-32 bg-blue-500 rounded-lg"
+                        >
+                            <StyledSpace style={{ width: isDesktop ? "50vw" : "70vw" }}>
+                                <Space style={{ rowGap: "0px" }} direction='vertical'>
+                                    <StyledTitle>JMM TECHNOLOGIES</StyledTitle>
+                                    <StyledTitle2>Software Engineer (ReactJS)</StyledTitle2>
+                                </Space>
+                                <Space style={{ rowGap: "0px" }} direction='vertical'>
+                                    <StyledText>Riyad, KSA (Rmote)</StyledText>
+                                    <StyledText>July 2024 - Jan 2025</StyledText>
+                                </Space>
+                            </StyledSpace>
+                        </motion.div>
+                    ),
+                    description: (
+                        <motion.div
+                            initial={{ opacity: 0, y: 50 }} // Start off-screen and transparent
+                            animate={isInView1 ? { opacity: 1, y: 0 } : {}} // Fade in and slide up when in view
+                            transition={{ duration: 0.8 }}
+                            className="w-32 h-32 bg-blue-500 rounded-lg"
                         >
                             <StyledText style={{ width: isDesktop ? "50vw" : "70vw", marginTop: "20px", rowGap: "20px", display: "flex", flexDirection: "column", marginBottom: "20px" }}>
                                 <Space>
@@ -88,11 +121,11 @@ const Experience = () => {
                 {
                     title: (
                         <motion.div
-                        ref={ref2}
-                        initial={{ opacity: 0, y: 50 }} // Start off-screen and transparent
-                        animate={isInView2 ? { opacity: 1, y: 0 } : {}} // Fade in and slide up when in view
-                        transition={{ duration: 0.8 }}
-                        className="w-32 h-32 bg-blue-500 rounded-lg"
+                            ref={ref2}
+                            initial={{ opacity: 0, y: 50 }} // Start off-screen and transparent
+                            animate={isInView2 ? { opacity: 1, y: 0 } : {}} // Fade in and slide up when in view
+                            transition={{ duration: 0.8 }}
+                            className="w-32 h-32 bg-blue-500 rounded-lg"
                         >
                             <StyledSpace style={{ width: isDesktop ? "50vw" : "70vw" }}>
                                 <Space style={{ rowGap: "0px" }} direction='vertical'>
@@ -100,7 +133,7 @@ const Experience = () => {
                                     <StyledTitle2>Junior Software Engineer</StyledTitle2>
                                 </Space>
                                 <Space style={{ rowGap: "0px" }} direction='vertical'>
-                                    <StyledText>Islamabad, Pakistan</StyledText>
+                                    <StyledText>Islamabad, Pakistan (On-site)</StyledText>
                                     <StyledText>Jan 2023 - July 2024</StyledText>
                                 </Space>
                             </StyledSpace>
@@ -108,10 +141,10 @@ const Experience = () => {
                     ),
                     description: (
                         <motion.div
-                        initial={{ opacity: 0, y: 50 }} // Start off-screen and transparent
-                        animate={isInView2 ? { opacity: 1, y: 0 } : {}} // Fade in and slide up when in view
-                        transition={{ duration: 0.8 }}
-                        className="w-32 h-32 bg-blue-500 rounded-lg"
+                            initial={{ opacity: 0, y: 50 }} // Start off-screen and transparent
+                            animate={isInView2 ? { opacity: 1, y: 0 } : {}} // Fade in and slide up when in view
+                            transition={{ duration: 0.8 }}
+                            className="w-32 h-32 bg-blue-500 rounded-lg"
                         >
                             <StyledText style={{ width: isDesktop ? "50vw" : "70vw", marginTop: "20px", rowGap: "20px", display: "flex", flexDirection: "column" }}>
                                 <Space>

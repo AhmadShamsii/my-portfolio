@@ -14,7 +14,7 @@ const Projects: React.FC = () => {
   return (
     <div style={{ marginTop: "2.5%" }}>
       <StyledTitle>Projects</StyledTitle>
-      <Row style={{ margin: isSmallDesktop ? "0 10vw" : "0" }} gutter={[24, 24]}>
+      <Row style={{ margin: isSmallDesktop ? "0 10vw" : "0", display:"flex", justifyContent:"center" }} gutter={[24, 24]}>
         {cardData?.map((data: any, index: number) => {
           const isNewCategory = data.category !== lastCategory; // Check if the category is new
           lastCategory = data.category; // Update the last rendered category

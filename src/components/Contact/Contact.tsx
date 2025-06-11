@@ -1,9 +1,9 @@
 import React from "react";
-import { Form, Input, message, Divider } from "antd";
+import { Form, Input, message, Divider, Tooltip } from "antd";
 import emailjs from "emailjs-com";
 import TextArea from "antd/es/input/TextArea";
 import { ArrowRightOutlined, FileTextOutlined, GithubOutlined, InstagramOutlined, LinkedinOutlined, MailOutlined } from "@ant-design/icons";
-import { StyledButton, StyledContainer, StyledText, StyledTitle } from "./styles";
+import { StyledButton, StyledContainer, StyledLink, StyledText, StyledTitle } from "./styles";
 import { largeDesktopBreakpoint, mobileBreakpoint } from "@/utils/constants";
 import { useMediaQuery } from "react-responsive";
 import Link from "next/link";
@@ -48,11 +48,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ isContactPage = false }: any)
 
                 <StyledTitle>Connect</StyledTitle>
                 <StyledText style={{ marginBottom: isDesktop ? "20px" : "10px", cursor: "pointer", display: "flex", gap: "7px", marginTop: "5px" }}>
-                    <Link target="_blank" href="https://github.com/AhmadShamsii"> <GithubOutlined /> </Link>
-                    <Link target="_blank" href="https://www.linkedin.com/in/ahmadshamsii/"> <LinkedinOutlined /></Link>
-                    <Link target="_blank" href="https://www.instagram.com/ahmadshamsii/"> <InstagramOutlined /></Link>
-                    <Link href="mailto:ahmaddshamsii@gmail.com"> <MailOutlined /></Link>
-                    <Link rel="noopener noreferrer" target="_blank" href="/resume.pdf"> <FileTextOutlined /></Link>
+                    <Tooltip title="Github"><StyledLink target="_blank" href="https://github.com/AhmadShamsii"> <GithubOutlined /> </StyledLink></Tooltip>
+                    <Tooltip title="Linkedin"><StyledLink target="_blank" href="https://www.linkedin.com/in/ahmadshamsii/"> <LinkedinOutlined /></StyledLink></Tooltip>
+                    <Tooltip title="Insta"><StyledLink target="_blank" href="https://www.instagram.com/ahmadshamsii/"> <InstagramOutlined /></StyledLink></Tooltip>
+                    <Tooltip title="Mail"><StyledLink href="mailto:ahmaddshamsii@gmail.com"> <MailOutlined /></StyledLink></Tooltip>
+                    <Tooltip title="Resume"><StyledLink rel="noopener noreferrer" target="_blank" href="/resume.pdf"> <FileTextOutlined /></StyledLink></Tooltip>
                 </StyledText>
             </div>
 

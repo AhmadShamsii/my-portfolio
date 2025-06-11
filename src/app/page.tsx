@@ -34,7 +34,7 @@ const Home = () => {
       <Divider />
       <StyledText style={{ marginBottom: isSmallDesktop ? "30px" : "15px" }}>Projects</StyledText>
       <Row style={{ margin: isDesktop ? "0 10vw" : "0vw" }} gutter={isSmallDesktop ? [24, 24] : [12, 12]}>
-        {cardData?.slice(0, 4)?.map((data, index) => (
+        {cardData?.filter((data) => [1, 2, 3, 4].includes(data.id))?.map((data, index) => (
           <Col key={`col-${index}`} span={data?.span}>
             <ProjectCard
               imageSrc={data.imageSrc}

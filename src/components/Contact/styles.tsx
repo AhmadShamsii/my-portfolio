@@ -1,6 +1,7 @@
 import { colors } from "@/utils/colors";
 import { desktopBreakpoint, mobileBreakpoint, tabletBreakpoint } from "@/utils/constants";
 import { Button } from "antd";
+import Link from "next/link";
 import styled from "styled-components";
 
 const StyledContainer = styled.div`
@@ -65,4 +66,12 @@ padding: 5px 0;
 
   }
 `;
-export { StyledTitle, StyledText, StyledContainer, StyledButton };
+const StyledLink = styled(Link)`
+  position: relative;
+  top: 0;
+  transition: top ease 0.2s;
+  &:hover {
+    top:-3px
+  }
+`;
+export { StyledTitle, StyledText, StyledContainer, StyledButton, StyledLink };

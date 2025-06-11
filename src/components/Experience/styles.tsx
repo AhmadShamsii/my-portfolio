@@ -4,6 +4,8 @@ import styled from "styled-components";
 
 const StyledText = styled.p`
 font-weight: 400;
+text-align: end;
+font-weight: 500;
  color: ${colors.lightgray};
     @media ${desktopBreakpoint} {
       font-size: 1vw;

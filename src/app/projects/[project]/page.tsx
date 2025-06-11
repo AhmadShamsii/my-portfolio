@@ -1,6 +1,7 @@
 // pages/about.tsx
 "use client";
 
+import AssistedLives from "@/components/AssistedLives";
 import Bankist from "@/components/Bankist";
 import Mapty from "@/components/Mapty";
 import Monstarz from "@/components/Monstarz";
@@ -27,6 +28,8 @@ const Project = ({ params }: { params: { project: string } }) => {
     return <Mapty />;
   } else if (params?.project === "bankist") {
     return <Bankist />;
+  } else if (params?.project === "assisted%20lives") {
+    return <AssistedLives />;
   } else {
     return null; // or a default component
   }
