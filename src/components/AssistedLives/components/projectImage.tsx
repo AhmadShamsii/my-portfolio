@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
-import assistedLives from "./../../../../public/assistedLives.png";
+import assistedLives from "./../../../../public/assistedLives.webp";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { mobileBreakpoint } from "@/utils/constants";

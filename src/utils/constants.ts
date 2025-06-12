@@ -12,7 +12,7 @@ import htmllogo from './../../public/htmllogo.svg';
 import framermotionlogo from './../../public/framermotionlogo.svg';
 import monstarzImg from './../../public/monstarzImg.png';
 import youfirst from './../../public/youfirst.png';
-import assistedLives from './../../public/assistedLives.png';
+import assistedLives from './../../public/assistedLives.webp';
 import zonebit from './../../public/zonebit.png';
 import wordplay from './../../public/wordplay.png';
 import nexters from './../../public/nexters.png';
